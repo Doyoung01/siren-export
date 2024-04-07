@@ -23,7 +23,6 @@ public class GameManager : MonoBehaviour
     private float time;
     private float timeLimit;
     public GameObject CoverImage;
-    public RawImage image;
     int min;
     float sec;
     bool isChecked = false;
