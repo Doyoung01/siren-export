@@ -12,14 +12,8 @@ public class ShowTotalInformation : MonoBehaviour
     [Header("The Total Information Canvas")]
     public GameObject canvas;
 
-    [Header("The number of Active Contents")]
-    public int countContents; // 활성화 될 인포창 개수
-
     [Header("Active Content")]
     public GameObject[] contents; // 활성화 될 인포창 배열
-
-    [Header("Buttons Number")]
-    public int buttonNumbers;
 
     [Header("Buttons Number")]
     public Button[] buttons;
@@ -67,7 +61,7 @@ public class ShowTotalInformation : MonoBehaviour
 
     public void HideAll()
     {
-        for(int i = 0;i < countContents; i++)
+        for(int i = 0;i < contents.Length; i++)
         {
             contents[i].SetActive(false);
         }
