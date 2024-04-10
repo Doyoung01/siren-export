@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,7 +27,7 @@ public class ShowTotalInformation : MonoBehaviour
     [Header("Back Button")]
     public Button backButton;
 
-    private int first = 1;
+    private int first = 0;
 
     // public List<Button> returnButtons;
 
@@ -36,10 +37,12 @@ public class ShowTotalInformation : MonoBehaviour
         EnableCanvas();
 
         //Hook events
-        for(int i = 0; i < countContents; i++)
-        {
-            if (buttons[i].onClick.AddListener())
-                ShowCanvas(contents[i]);
+        foreach (var item in buttons.Select((value, index) => new { Value = value, Index = index })) {
+            if (item.Value != null)
+            {
+                item.Value.onClick.AddListener(() => ShowCanvas(contents[item.Index]));
+            }
+            // item.onClick.AddListener(ShowCanvas(contents[index])) ;
         }
 
         backButton.onClick.AddListener(DisableCanvas);
