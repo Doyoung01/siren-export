@@ -2939,7 +2939,6 @@ MonoBehaviour:
   RestartButton: {fileID: 989385438}
   timeText: {fileID: 7164418182492590715}
   CoverImage: {fileID: 598863992}
-  image: {fileID: 148290879}
   infoWindows: {fileID: 478688503}
   applause: {fileID: 8300000, guid: 19d3918c68e607648a6420d4310d3e21, type: 3}
   clear: {fileID: 1758864519}
@@ -3119,20 +3118,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   returnCanvas: {fileID: 1758864519}
   canvas: {fileID: 514896053}
-  gnum1: {fileID: 1807263364}
-  gnum2: {fileID: 1129553181}
-  gnum3: {fileID: 204477620}
-  gnum4: {fileID: 954778863}
-  gnum5: {fileID: 855865363}
-  gnum6: {fileID: 743209995}
-  gnum7: {fileID: 743209995}
-  bnum1: {fileID: 511973552}
-  bnum2: {fileID: 1362521316}
-  bnum3: {fileID: 1815287437}
-  bnum4: {fileID: 374267511}
-  bnum5: {fileID: 1956623314}
-  bnum6: {fileID: 646440285}
-  bnum7: {fileID: 646440285}
+  countContents: 6
+  contents:
+  - {fileID: 1807263364}
+  - {fileID: 1129553181}
+  - {fileID: 204477620}
+  - {fileID: 954778863}
+  - {fileID: 855865363}
+  - {fileID: 743209995}
+  buttonNumbers: 6
+  buttons:
+  - {fileID: 511973552}
+  - {fileID: 1362521316}
+  - {fileID: 1815287437}
+  - {fileID: 374267511}
+  - {fileID: 1956623314}
+  - {fileID: 646440285}
   backButton: {fileID: 1655428483}
 --- !u!1001 &63240271
 PrefabInstance:
@@ -24602,20 +24603,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   returnCanvas: {fileID: 1758864519}
   canvas: {fileID: 514896053}
-  gnum1: {fileID: 1807263364}
-  gnum2: {fileID: 1129553181}
-  gnum3: {fileID: 204477620}
-  gnum4: {fileID: 954778863}
-  gnum5: {fileID: 855865363}
-  gnum6: {fileID: 743209995}
-  gnum7: {fileID: 743209995}
-  bnum1: {fileID: 511973552}
-  bnum2: {fileID: 1362521316}
-  bnum3: {fileID: 1815287437}
-  bnum4: {fileID: 374267511}
-  bnum5: {fileID: 1956623314}
-  bnum6: {fileID: 646440285}
-  bnum7: {fileID: 646440285}
+  countContents: 0
+  contents: []
+  buttonNumbers: 0
+  buttons: []
   backButton: {fileID: 1655428483}
 --- !u!114 &514896055
 MonoBehaviour:
