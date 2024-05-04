@@ -46,7 +46,6 @@ public class GameManager : MonoBehaviour
     [Header("Pause")]
     public InputActionAsset actionAsset;
     public GameObject pauseWindow;
-    public Text textUI;
     private bool isPause;
     float saveButton = 0;
 
@@ -132,7 +131,6 @@ public class GameManager : MonoBehaviour
         if (isChecked == true){
             var rightAButton = actionAsset.actionMaps[5].actions[0].ReadValue<float>();
             
-            textUI.text = rightAButton.ToString();
             if (rightAButton == 1)
             {
                 saveButton = 1;
