@@ -208,7 +208,7 @@ public class GameManager : MonoBehaviour
                     fires.SetActive(true);
                     audio.Stop();
                     audio.clip = audioClip;
-                    audio.pitch = 1f;
+                    audio.pitch = 0.7f;
                     volume();
                 }
             }
