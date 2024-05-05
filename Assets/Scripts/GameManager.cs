@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 using System.Threading;
 using Unity.VisualScripting;
 using System.Data;
@@ -42,6 +43,12 @@ public class GameManager : MonoBehaviour
     public GameObject clear; // 클리어창
     public GameObject totalInfo;
 
+    [Header("Pause")]
+    public InputActionAsset actionAsset;
+    public GameObject pauseWindow;
+    private bool isPause;
+    float saveButton = 0;
+
     public bool isActiveInfo()
     {
         return infoWindows.activeSelf;
@@ -60,11 +67,13 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        isPause = false;
         RestartButton.SetActive(false);
         fires.SetActive(false);
         clear.SetActive(false);
         totalInfo.SetActive(false);
         infoWindows.SetActive(false);
+        pauseWindow.SetActive(false);
         audio = GetComponent<AudioSource>();
         countScript = GetComponent<Objectcount>();
     }
@@ -113,14 +122,41 @@ public class GameManager : MonoBehaviour
         // audio.outputAudioMixerGroup.audioMixer.SetFloat("Pitch", 1f / spd);
     }
 
+
     // Update is called once per frame
     void Update()
     {
-
         // Player.transform.position = new Vector3(0, 6, 0);
 
         if (isChecked == true){
-            if (!hasAppeared) {
+            var rightAButton = actionAsset.actionMaps[5].actions[0].ReadValue<float>();
+            
+            if (rightAButton == 1)
+            {
+                saveButton = 1;
+            } else
+            {
+                if(isPause == true && pauseWindow.activeSelf == false)
+                {
+                    saveButton = 0;
+                }
+            }
+            if (isPause == false && saveButton == 1)
+            {
+                pauseWindow.SetActive(true);
+                Time.timeScale = 0;
+                isPause = true;
+                return;
+            }
+            else if (isPause == true && pauseWindow.activeSelf == false)
+            {
+                Time.timeScale = 1;
+                isPause = false;
+                return;
+            }
+
+
+            if (!hasAppeared && isPause == false) {
                 if (countScript.getCount() == countScript.getObcount())
                 {
                     isChecked = false;
@@ -177,13 +213,5 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
-        
-        
-
-        
     }
-
-
-
-
 }
