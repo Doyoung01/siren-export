@@ -1480,15 +1480,6 @@
             "id": "461bce25-7762-40c5-b639-f190649be6d6",
             "actions": [
                 {
-                    "name": "A Button",
-                    "type": "Button",
-                    "id": "ddb45311-6d9d-4571-9940-e7e2c89eae50",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Select",
                     "type": "Button",
                     "id": "ac96c10b-c955-4a46-8e67-bf16bc069b53",
@@ -1751,17 +1742,6 @@
                     "processors": "ScaleVector2(x=0),StickDeadzone",
                     "groups": "Generic XR Controller",
                     "action": "Scale Delta",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "0fe0eed0-9fef-4f63-a831-3a5ea957a9bc",
-                    "path": "<XRController>{RightHand}/secondaryButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Generic XR Controller",
-                    "action": "A Button",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
