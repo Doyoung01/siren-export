@@ -26,8 +26,8 @@ public class GameManager : MonoBehaviour
     public GameObject CoverImage;
     int min;
     float sec;
-    bool isChecked = false;
-    bool hasAppeared = false;
+    private bool isChecked = false;
+    private bool hasAppeared = false;
 
     [Header("BGM")]
     private AudioSource audio;
@@ -59,6 +59,11 @@ public class GameManager : MonoBehaviour
         return isclear;
     }
 
+    public float getTime()
+    {
+        return time;
+    }
+
     private void Awake()
     {
 
@@ -80,7 +85,7 @@ public class GameManager : MonoBehaviour
 
     public void OnClickStartButton()
     {
-        time = 100f;
+        time = 300f;
         timeLimit = 0.0f;
         CoverImage.SetActive(false);
         isChecked = true;
@@ -121,6 +126,7 @@ public class GameManager : MonoBehaviour
         audio.pitch = spd;
         // audio.outputAudioMixerGroup.audioMixer.SetFloat("Pitch", 1f / spd);
     }
+
 
 
     // Update is called once per frame
