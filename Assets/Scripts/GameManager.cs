@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 using System.Threading;
 using Unity.VisualScripting;
 using System.Data;
+using Oculus.Interaction.UnityCanvas;
 
 public class GameManager : MonoBehaviour
 {
@@ -33,10 +34,10 @@ public class GameManager : MonoBehaviour
     private AudioSource audio;
     private float speed;
 
-    [Header("Is Clear?")]
+    [Header("Is Clear")]
     private Objectcount countScript;
     private bool isclear = false;
-    public GameObject infoWindows;
+    public GameObject canvases;
     public AudioClip applause;
 
     [Header("Clear Window")]
@@ -51,9 +52,9 @@ public class GameManager : MonoBehaviour
 
     public bool isActiveInfo()
     {
-        return infoWindows.activeSelf;
+        return canvases.activeSelf;
     }
-    
+
     public bool getIsclear()
     {
         return isclear;
@@ -77,8 +78,8 @@ public class GameManager : MonoBehaviour
         fires.SetActive(false);
         clear.SetActive(false);
         totalInfo.SetActive(false);
-        infoWindows.SetActive(false);
         pauseWindow.SetActive(false);
+        canvases.SetActive(false);
         audio = GetComponent<AudioSource>();
         countScript = GetComponent<Objectcount>();
     }
@@ -116,6 +117,13 @@ public class GameManager : MonoBehaviour
         clear.SetActive(false);
         totalInfo.SetActive(true);
     }
+
+    public void OnclickClearButton()
+    {
+        totalInfo.SetActive(false);
+        clear.SetActive(true);
+    }
+
     public void BacktoLobby()
     {
         SceneManager.LoadScene(1);
@@ -166,8 +174,8 @@ public class GameManager : MonoBehaviour
                 if (countScript.getCount() == countScript.getObcount())
                 {
                     isChecked = false;
-                    infoWindows.SetActive(true);
                     isclear = true;
+                    canvases.SetActive(true);
                     audio.Stop();
                     audio.clip = applause;
                     audio.Play();

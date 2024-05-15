@@ -9,7 +9,8 @@ public class Objectcount : MonoBehaviour
     private int count;
     private GameObject[] obcount;
     public Text Score_count;
-    public XRRayInteractor rayInteractor; // XR Ray Interactor에 대한 참조
+    public XRRayInteractor rightrayInteractor; // XR Ray Interactor에 대한 참조
+    public XRRayInteractor leftrayInteractor;
     private GameManager gm;
 
     [Header("Interactive Objects")]
@@ -38,7 +39,8 @@ public class Objectcount : MonoBehaviour
     private void Start()
     {
         Debug.Log("hi");
-        rayInteractor.selectEntered.AddListener(OnSelectEntered);
+        rightrayInteractor.selectEntered.AddListener(OnSelectEntered);
+        leftrayInteractor.selectEntered.AddListener(OnSelectEntered);
 
         count = 0;
         obcount = GameObject.FindGameObjectsWithTag("GameController");
@@ -92,9 +94,10 @@ public class Objectcount : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (rayInteractor != null)
+        if (rightrayInteractor != null || leftrayInteractor != null)
         {
-            rayInteractor.selectEntered.RemoveListener(OnSelectEntered);
+            rightrayInteractor.selectEntered.RemoveListener(OnSelectEntered);
+            leftrayInteractor.selectEntered.RemoveListener(OnSelectEntered);
         }
     }
 
