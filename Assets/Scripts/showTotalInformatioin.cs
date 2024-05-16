@@ -46,13 +46,11 @@ public class showTotalInformation : MonoBehaviour
             Button[] childButtons = GetComponentsInChildren<Button>();
             foreach (Button button in childButtons)
             {
-                if (button != null && button.name != "TotalBackButton")
+                if (button != null && button.name != "TotalBackButton" && button.name != "ClearButton")
                 {
                     button.onClick.AddListener(() => { fenableCanvas(int.Parse(button.name) - 1); });
                 }
             }
-            // Button backbtn = GameObject.Find("TotalBackButton").GetComponent<Button>();
-            // backbtn.onClick.AddListener(() => { gm.OnclickClearButton(); });
         }
     }
 
