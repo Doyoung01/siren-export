@@ -23,7 +23,7 @@ public class modifyTextMeshPro : MonoBehaviour
     public Vector3[] rlocation = {  };
 
     private float[] frotation = { -90f, -270f, -183.092f, -159.444f, 44.486f, -90f, -270f, -270f, 50f, 270f };
-    private float[] rrotation = { 90f, -87f, 90f, 90f, -87f, 90f };
+    private float[] rrotation = { 90f, -90f, 90f, 90f, -90f, 90f };
 
     private GameManager gm;
     private float t = 0;
@@ -169,8 +169,8 @@ public class modifyTextMeshPro : MonoBehaviour
 
     private void rmakeInstance(int i, int j)
     {
-        GameObject myInstance = Instantiate(prefab, parent, false);
-        myInstance.transform.position = rlocation[j];
+        GameObject myInstance = Instantiate(prefab, parent, true);
+        myInstance.transform.position = parent.position + rlocation[j];
         Quaternion newVRotation = Quaternion.Euler(0, rrotation[j], 0);
         myInstance.transform.rotation = newVRotation;
 
