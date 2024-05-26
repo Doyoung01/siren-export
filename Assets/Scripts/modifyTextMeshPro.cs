@@ -21,9 +21,11 @@ public class modifyTextMeshPro : MonoBehaviour
         new Vector3(-9.14f, 2.5f, 13.06f), new Vector3(-1.91f, 2.3f, 0.24f), new Vector3(-8.08f, 2.15f, 4.462f),
         new Vector3(5.21f, 2.15f, 11.66f), new Vector3(-10.95f, 2.15f, 7.16f)};
     public Vector3[] rlocation = {  };
+    public Vector3[] hlocation = { };
 
     private float[] frotation = { -90f, -270f, -183.092f, -159.444f, 44.486f, -90f, -270f, -270f, 50f, 270f };
     private float[] rrotation = { 90f, -90f, 90f, 90f, -90f, 90f };
+    private float[] hrotation = { -0.345f, 87.959f, 176.996f, -57.428f, -180f, 74.735f };
 
     private GameManager gm;
     private float t = 0;
@@ -101,6 +103,36 @@ public class modifyTextMeshPro : MonoBehaviour
         "Filters in the hood should be cleaned regularly to prevent grease accumulation. To clean the filter, first turn off the hood and remove the filter. Then, clean it with a neutral detergent, rinse, and dry thoroughly."
     };
 
+    public string[] htitleList =
+    {
+        "Electric pad",
+        "Cooking food",
+        "Multi-tap fire",
+        "Cigarette butts fire",
+        "Hair dryer fire",
+        "Toaster fire"
+    };
+
+    public string[] hcontentList1 =
+    {
+        "Electric floorboards were used with thick blankets for a long time. This prevents heat from escaping and can cause fires due to high temperatures.",
+        "Food left in the cooking. Long periods of gas fire use can lead to fires.",
+        "Overloaded with multi-tap octopus, resulting in fire. Excessive current flow may cause a fire.",
+        "The fire started because the cigarette butts did not check the embers after smoking. It's one of the many accidents that occur due to carelessness every year.",
+        "The hair dryer was left on, causing a fire. Turning on the hair dryer for a long time may cause a fire due to heat.",
+        "The fire was caused by bread crumbs, dust, etc. inside the toaster. You need to be careful as it is a device that uses heat.",
+    };
+
+    public string[] hcontentList2 =
+    {
+        "Avoid using electric floorboards, thick yarns, blankets, etc. together. Additionally, you must verify that the product is safety certified and unplug it if not in use.",
+        "Do not leave food as much as possible while cooking. Make sure the gas heat is turned off after cooking, and no additional combustible substances are placed near the fire.",
+        "You should refrain from using a multi-tap octopus, and we recommend using a multi-tap with overload protection. It is also recommended that you refrain from using it if there is a problem with the wire cladding.",
+        "Always check for embers before throwing away cigarette butts after smoking, and never throw them near combustible substances. Additionally, you should be careful when discarding the ashtray as there may still be embers left.",
+        "It is recommended to turn off the hair dryer after use and to pull out the cord line. In addition, care must be taken for foreign substances or dust in the inlet and do not store it in a damp place.",
+        "Periodic cleaning of dust and breadcrumbs is required, and unplugging is recommended after use. Additionally, metal substances should not be inserted after use of the toaster, and the toaster should not be applied with butter.",        
+    };
+
     // Start is called before the first frame update
     void Start()
     {
@@ -126,6 +158,14 @@ public class modifyTextMeshPro : MonoBehaviour
                 for (int j = 0; j < canvasNumber.Length; j++)
                 {
                     rmakeInstance(canvasNumber[j] - 1, j);
+                }
+                loop = true;
+                active = true;
+            } else if (clear && SceneManager.GetActiveScene().buildIndex == 4)
+            {
+                for (int j = 0; j < canvasNumber.Length; j++)
+                {
+                    hmakeInstance(canvasNumber[j] - 1, j);
                 }
                 loop = true;
                 active = true;
@@ -192,6 +232,35 @@ public class modifyTextMeshPro : MonoBehaviour
         this.title.text = rtitleList[i];
         this.content1.text = rcontentList1[i];
         this.content2.text = rcontentList2[i];
+
+        myInstance.SetActive(true);
+    }
+
+    private void hmakeInstance(int i, int j)
+    {
+        GameObject myInstance = Instantiate(prefab, parent, true);
+        myInstance.transform.position = parent.position + hlocation[j];
+        Quaternion newVRotation = Quaternion.Euler(0, hrotation[j], 0);
+        myInstance.transform.rotation = newVRotation;
+
+        Button clonedBtn = Instantiate(btn, myInstance.transform);
+        RectTransform rectTransform = clonedBtn.GetComponent<RectTransform>();
+        rectTransform.anchorMin = new Vector2(0.5f, 0.5f);  // Anchor를 부모의 중앙으로 설정
+        rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+        rectTransform.pivot = new Vector2(0.5f, 0.5f);      // pivot을 중앙으로 설정
+        rectTransform.anchoredPosition = new Vector2(0, -210.9025f);
+
+        TMP_Text btnText = clonedBtn.GetComponentInChildren<TMP_Text>();
+        btnText.text = "OK";
+        clonedBtn.onClick.AddListener(() => Destroy(myInstance));
+
+        this.title = myInstance.transform.Find("TitleText").gameObject.GetComponent<TMP_Text>();
+        this.content1 = myInstance.transform.Find("ContentText1").gameObject.GetComponent<TMP_Text>();
+        this.content2 = myInstance.transform.Find("ContentText2").gameObject.GetComponent<TMP_Text>();
+
+        this.title.text = htitleList[i];
+        this.content1.text = hcontentList1[i];
+        this.content2.text = hcontentList2[i];
 
         myInstance.SetActive(true);
     }

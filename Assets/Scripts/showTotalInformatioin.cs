@@ -37,6 +37,10 @@ public class showTotalInformation : MonoBehaviour
         {
             title.text = mtm.rtitleList[0];
             content.text = "\n" + mtm.rcontentList1[0] + "\n\n\n" + mtm.rcontentList2[0];
+        } else if (SceneManager.GetActiveScene().buildIndex == 4)
+        {
+            title.text = mtm.htitleList[0];
+            content.text = "\n" + mtm.hcontentList1[0] + "\n\n\n" + mtm.hcontentList2[0];
         }
     }
 
@@ -63,6 +67,16 @@ public class showTotalInformation : MonoBehaviour
                     button.onClick.AddListener(() => { renableCanvas(int.Parse(button.name) - 1); });
                 }
             }
+        } else if (SceneManager.GetActiveScene().buildIndex == 4 && gm.getIsclear())
+        {
+            Button[] childButtons = GetComponentsInChildren<Button>();
+            foreach (Button button in childButtons)
+            {
+                if (button != null && button.name != "TotalBackButton" && button.name != "ClearButton" && button.name != "BackButton")
+                {
+                    button.onClick.AddListener(() => { henableCanvas(int.Parse(button.name) - 1); });
+                }
+            }
         }
     }
 
@@ -79,5 +93,12 @@ public class showTotalInformation : MonoBehaviour
 
         title.text = mtm.rtitleList[i];
         content.text = "\n" + mtm.rcontentList1[i] + "\n\n\n" + mtm.rcontentList2[i];
+    }
+    public void henableCanvas(int i)
+    {
+        Debug.Log(i);
+
+        title.text = mtm.htitleList[i];
+        content.text = "\n" + mtm.hcontentList1[i] + "\n\n\n" + mtm.hcontentList2[i];
     }
 }
