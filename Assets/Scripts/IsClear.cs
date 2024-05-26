@@ -35,19 +35,4 @@ public class IsClear : MonoBehaviour
             }
         }
     }
-
-    private bool checkingActive()
-    {
-        flag = true;
-
-        for (int i = 0; i < infoWindows; i++)
-        {
-            if(this.transform.childCount != 0) {
-            flag = false;
-                break;
-            }
-        }
-
-        return flag;
-    }
 }

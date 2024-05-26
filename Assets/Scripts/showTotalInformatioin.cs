@@ -19,7 +19,6 @@ public class showTotalInformation : MonoBehaviour
     public TMP_Text content;
     private GameManager gm;
     private modifyTextMeshPro mtm;
-    private clickWhat cw;
 
     [Header("Back Button")]
     public GameObject buttons;
@@ -27,7 +26,6 @@ public class showTotalInformation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cw = GameObject.Find("Buttons").GetComponent<clickWhat>();
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         mtm = GameObject.Find("GameManager").GetComponent<modifyTextMeshPro>();
 
@@ -35,6 +33,10 @@ public class showTotalInformation : MonoBehaviour
         {
             title.text = mtm.ftitleList[0];
             content.text = "\n" + mtm.fcontentList1[0] + "\n\n\n" + mtm.fcontentList2[0];
+        } else if (SceneManager.GetActiveScene().buildIndex == 3)
+        {
+            title.text = mtm.rtitleList[0];
+            content.text = "\n" + mtm.rcontentList1[0] + "\n\n\n" + mtm.rcontentList2[0];
         }
     }
 
@@ -46,9 +48,19 @@ public class showTotalInformation : MonoBehaviour
             Button[] childButtons = GetComponentsInChildren<Button>();
             foreach (Button button in childButtons)
             {
-                if (button != null && button.name != "TotalBackButton" && button.name != "ClearButton")
+                if (button != null && button.name != "TotalBackButton" && button.name != "ClearButton" && button.name != "BackButton")
                 {
                     button.onClick.AddListener(() => { fenableCanvas(int.Parse(button.name) - 1); });
+                } 
+            }
+        } else if (SceneManager.GetActiveScene().buildIndex== 3  && gm.getIsclear())
+        {
+            Button[] childButtons = GetComponentsInChildren<Button>();
+            foreach (Button button in childButtons)
+            {
+                if (button != null && button.name != "TotalBackButton" && button.name != "ClearButton" && button.name != "BackButton")
+                {
+                    button.onClick.AddListener(() => { renableCanvas(int.Parse(button.name) - 1); });
                 }
             }
         }
@@ -61,10 +73,11 @@ public class showTotalInformation : MonoBehaviour
         title.text = mtm.ftitleList[i];
         content.text = "\n" + mtm.fcontentList1[i] + "\n\n\n" + mtm.fcontentList2[i];
     }
-
-    public void DisableCanvas()
+    public void renableCanvas(int i)
     {
-        totalCanvas.SetActive(false);
-        returnCanvas.SetActive(true);
+        Debug.Log(i);
+
+        title.text = mtm.rtitleList[i];
+        content.text = "\n" + mtm.rcontentList1[i] + "\n\n\n" + mtm.rcontentList2[i];
     }
 }

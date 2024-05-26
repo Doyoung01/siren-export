@@ -15,13 +15,15 @@ public class modifyTextMeshPro : MonoBehaviour
     public GameObject prefab;
     public Transform parent;
 
-    public int[] canvasNumber = { 1, 2, 3, 3, 3, 3, 4, 5, 6, 7 };
+    public int[] canvasNumber;
     public Vector3[] flocation = { new Vector3(1.687f, 2.15f, -0.306f), new Vector3(-6.76f, 2f, -7.6f),
         new Vector3(4.217f, 2.15f,-10.426f), new Vector3(-7.85f, 2.5f, -2.25f),  new Vector3(4f, 2.5f, 14.45f),
         new Vector3(-9.14f, 2.5f, 13.06f), new Vector3(-1.91f, 2.3f, 0.24f), new Vector3(-8.08f, 2.15f, 4.462f),
         new Vector3(5.21f, 2.15f, 11.66f), new Vector3(-10.95f, 2.15f, 7.16f)};
+    public Vector3[] rlocation = {  };
 
-    public float[] frotation = { -90f, -270f, -183.092f, -159.444f, 44.486f, -90f, -270f, -270f, 50f, 270f };
+    private float[] frotation = { -90f, -270f, -183.092f, -159.444f, 44.486f, -90f, -270f, -270f, 50f, 270f };
+    private float[] rrotation = { 90f, -87f, 90f, 90f, -87f, 90f };
 
     private GameManager gm;
     private float t = 0;
@@ -70,6 +72,35 @@ public class modifyTextMeshPro : MonoBehaviour
         "If the fire extinguisher is surrounded by a lot of luggage, it may not be used properly when needed. Fire extinguishers should be placed in a visible location that does not cause inconvenience to people's passage, and it is recommended to avoid direct sunlight in places with high temperatures or humidity."
     };
 
+    // Restaurant Canvas
+    public string[] rtitleList =
+    {
+        "Combustible materials near a gas flame",
+        "Not turning off the power after using the fryer",
+        "Gas leak in gas pipeline",
+        "Long-term use of air conditioner",
+        "Problems using regular fire extinguishers",
+        "Grease stains on the kitchen hood"
+    };
+
+    public string[] rcontentList1 =
+    {
+        "Placing flammable materials near a gas flame can cause a fire to spread.",
+        "If the fryer is continuously turned on, the fryer and oil may overheat and cause a fire.",
+        "There is a gas leak.",
+        "The air conditioner overheated due to prolonged use.",
+        "Fire safety standards require restaurants to have Class K fire extinguishers.",
+        "Fire may spread due to grease stains accumulated in the hood from cooking food."
+    };
+    public string[] rcontentList2 = {
+        "Keep flammable materials (materials that can catch fire) away from the gas stove.",
+        "When there is no food to cook, turn off the power to lower the temperature of the fryer and oil.",
+        "Conduct regular inspections of gas pipelines and connections, stoves. Additionally, safety valves or automatic shut-off systems can be installed in gas pipelines to automatically shut off the gas supply when a leak is detected.",
+        "Excessive use of air conditioners can cause electrical sparks in the cord, and condenser(outdoor units) can can also overheat. Regularly inspect the air conditioner's wiring for any issues, and avoid overheating by frequently turning off the air conditioner.",
+        "Kitchens up to 25m² should be equipped with a class K fire extinguisher, while those larger than 25m^2 require both a class K and a powder fire extinguisher. Additionally, it is necessary to regularly check the fire extinguisher's pressure gauge.",
+        "Filters in the hood should be cleaned regularly to prevent grease accumulation. To clean the filter, first turn off the hood and remove the filter. Then, clean it with a neutral detergent, rinse, and dry thoroughly."
+    };
+
     // Start is called before the first frame update
     void Start()
     {
@@ -87,6 +118,14 @@ public class modifyTextMeshPro : MonoBehaviour
                 for (int j = 0; j < canvasNumber.Length; j++)
                 {
                     fmakeInstance(canvasNumber[j] - 1, j);
+                }
+                loop = true;
+                active = true;
+            } else if (clear && SceneManager.GetActiveScene().buildIndex == 3)
+            {
+                for (int j = 0; j < canvasNumber.Length; j++)
+                {
+                    rmakeInstance(canvasNumber[j] - 1, j);
                 }
                 loop = true;
                 active = true;
@@ -124,6 +163,35 @@ public class modifyTextMeshPro : MonoBehaviour
         this.title.text = ftitleList[i];
         this.content1.text = fcontentList1[i];
         this.content2.text = fcontentList2[i];
+
+        myInstance.SetActive(true);
+    }
+
+    private void rmakeInstance(int i, int j)
+    {
+        GameObject myInstance = Instantiate(prefab, parent, false);
+        myInstance.transform.position = rlocation[j];
+        Quaternion newVRotation = Quaternion.Euler(0, rrotation[j], 0);
+        myInstance.transform.rotation = newVRotation;
+
+        Button clonedBtn = Instantiate(btn, myInstance.transform);
+        RectTransform rectTransform = clonedBtn.GetComponent<RectTransform>();
+        rectTransform.anchorMin = new Vector2(0.5f, 0.5f);  // Anchor를 부모의 중앙으로 설정
+        rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+        rectTransform.pivot = new Vector2(0.5f, 0.5f);      // pivot을 중앙으로 설정
+        rectTransform.anchoredPosition = new Vector2(0, -210.9025f);
+
+        TMP_Text btnText = clonedBtn.GetComponentInChildren<TMP_Text>();
+        btnText.text = "OK";
+        clonedBtn.onClick.AddListener(() => Destroy(myInstance));
+
+        this.title = myInstance.transform.Find("TitleText").gameObject.GetComponent<TMP_Text>();
+        this.content1 = myInstance.transform.Find("ContentText1").gameObject.GetComponent<TMP_Text>();
+        this.content2 = myInstance.transform.Find("ContentText2").gameObject.GetComponent<TMP_Text>();
+
+        this.title.text = rtitleList[i];
+        this.content1.text = rcontentList1[i];
+        this.content2.text = rcontentList2[i];
 
         myInstance.SetActive(true);
     }
