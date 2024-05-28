@@ -21,6 +21,13 @@ public class Objectcount : MonoBehaviour
     public GameObject[] beforeobj;  // 상호작용 전 오브젝트
     public GameObject[] afterobj;   // 상호작용 후 오브젝트
 
+    string[] interactableObjects = null;
+
+    public string[] getInteractableObjects()
+    {
+        return interactableObjects;
+    }
+
     public int getCount()
     {
         return count;
@@ -44,10 +51,7 @@ public class Objectcount : MonoBehaviour
 
     private void Update()
     {
-        if(gm.timeText.color == Color.green)
-        {
-            Score_count.text = count + " / " + obcount.Length;
-        }
+        Score_count.text = count + " / " + obcount.Length;
     }
 
     private void OnSelectEntered(SelectEnterEventArgs args)
@@ -66,10 +70,12 @@ public class Objectcount : MonoBehaviour
                     if(afterobj[i] == empty)
                     {
                         beforeobj[i].SetActive(false);
+                        interactableObjects[i] = args.interactable.transform.gameObject.name;
                     } else
                     {
                         beforeobj[i].SetActive(false);
                         afterobj[i].SetActive(true);
+                        interactableObjects[i] = args.interactable.transform.gameObject.name;
                     }
                     
 

@@ -8,6 +8,7 @@ using System.Threading;
 using Unity.VisualScripting;
 using System.Data;
 using Oculus.Interaction.UnityCanvas;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManager : MonoBehaviour
 {
@@ -50,6 +51,8 @@ public class GameManager : MonoBehaviour
     private bool isPause;
     float saveButton = 0;
 
+    private static int gamePlay = 0;
+
     public bool isActiveInfo()
     {
         return canvases.activeSelf;
@@ -60,14 +63,14 @@ public class GameManager : MonoBehaviour
         return isclear;
     }
 
+    public bool getReturnCanvasActive()
+    {
+        return RestartButton.activeSelf;
+    }
+
     public float getTime()
     {
         return time;
-    }
-
-    private void Awake()
-    {
-
     }
 
     // Start is called before the first frame update
@@ -86,7 +89,7 @@ public class GameManager : MonoBehaviour
 
     public void OnClickStartButton()
     {
-        time = 300f;
+        time = 50f;
         timeLimit = 0.0f;
         CoverImage.SetActive(false);
         isChecked = true;
@@ -224,6 +227,7 @@ public class GameManager : MonoBehaviour
                     audio.clip = audioClip;
                     audio.pitch = 0.7f;
                     volume();
+                    PlayerPrefs.SetInt("PlayCount", ++gamePlay);
                 }
             }
         }
