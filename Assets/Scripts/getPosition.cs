@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class getPosition : MonoBehaviour
@@ -9,62 +11,60 @@ public class getPosition : MonoBehaviour
     public RectTransform leftbar;
     public RectTransform rightbar;
     public RectTransform top;
+    public RectTransform panel;
     public RectTransform bottom;
-    public RectTransform fail;
+
+    public TMP_Text contentText;
 
     // value of the dynamic canvas
-    private float height = 0;
+    private float origin = 0;
+    private float count = 0;
 
-    public TMP_Text content;
+    public RectTransform content;
 
-    private static float gap = 40.25f;
-    private static float original = 0;
-    private static int loop = 0;
+    private Vector2 leftbarInitialSize;
+    private Vector2 rightbarInitialSize;
+    private Vector3 panelInitialSize;
+
+    private static float gap;
 
     void Start()
     {
-        // Restart Canvas Component Script
-        height = rect.sizeDelta.y;
-        original = height;
+        // 초기값 설정
+        leftbarInitialSize = leftbar.sizeDelta;
+        rightbarInitialSize = rightbar.sizeDelta;
+        panelInitialSize = panel.sizeDelta;
 
-        Debug.Log(height);
+        // Restart Canvas Component Script
+        origin = content.rect.height;
+        count = wordCount(contentText.text, "\n") + 1;
     }
 
     void Update()
     {
         // height of dynamic panel
-        height = rect.sizeDelta.y;
+        var currentHeight = content.rect.height;
+        
+        gap = (currentHeight - origin) / 2;
+        count = wordCount(contentText.text, "\n") + 1;
 
         // if the height is changed
-        if (height > original && loop <= wordCount(content.text, "\n"))
+        if (gap != 0)
         {
-            // leftbar.sizeDelta = new Vector2(leftbar.sizeDelta.x, leftbar.sizeDelta.y + gap);
-            // rightbar.sizeDelta = new Vector2(rightbar.sizeDelta.x, rightbar.sizeDelta.y + gap);
+            leftbar.sizeDelta = new Vector2(leftbarInitialSize.x, leftbarInitialSize.y + gap * count);
+            rightbar.sizeDelta = new Vector2(rightbarInitialSize.x, rightbarInitialSize.y + gap * count);
+            panel.sizeDelta = new Vector2(panelInitialSize.x, panelInitialSize.y + gap * count);
 
-            top.position = new Vector3(top.transform.position.x, top.transform.position.y + gap, top.transform.position.z);
-            bottom.position = new Vector3(bottom.transform.position.x, bottom.transform.position.y - gap, bottom.transform.position.z);
+            top.localPosition += new Vector3(0, gap, 0);
+            bottom.localPosition += new Vector3(0, -gap, 0);
 
-            fail.transform.position = new Vector2(fail.transform.position.x, fail.transform.position.y + gap);
+            origin = currentHeight;
 
-            loop++;
-
-            Debug.Log(gap + " " + height + loop);
-        } else if (height > original && loop > wordCount(content.text, "\n"))
-        {
-            // leftbar. = new Vector2(leftbar.rect.x, leftbar.rect.y - gap);
-            // rightbar.sizeDelta = new Vector2(rightbar.rect.x, rightbar.rect.y - gap);
-
-            top.position = new Vector3(top.transform.position.x, top.transform.position.y - gap, top.transform.position.z);
-            bottom.position = new Vector3(bottom.transform.position.x, bottom.transform.position.y + gap, bottom.position.z);
-
-            fail.transform.position = new Vector2(fail.transform.position.x, fail.transform.position.y - gap);
-
-            loop--;
-
-            Debug.Log(gap + " " + height + loop);
+            Debug.Log(gap);
         }
     }
 
+    // contentText.text에 "\n"이 몇 개가 포함되어 있는지 계산
     private int wordCount(string s, string word)
     {
         string[] stringArray = s.Split(new string[] { word }, System.StringSplitOptions.None);
