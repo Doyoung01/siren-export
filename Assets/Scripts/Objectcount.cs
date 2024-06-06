@@ -14,18 +14,16 @@ public class Objectcount : MonoBehaviour
     public XRRayInteractor rightrayInteractor; 
     public XRRayInteractor leftrayInteractor;
 
-    private GameManager gm;
-
     [Header("Interactive Objects")]
     public GameObject empty;        // 상호작용 후 사라질 오브젝트에는 afterobj에 EmptyObject(empty) 넣기
     public GameObject[] beforeobj;  // 상호작용 전 오브젝트
     public GameObject[] afterobj;   // 상호작용 후 오브젝트
 
-    string[] interactableObjects = null;
+    private string interact;
 
-    public string[] getInteractableObjects()
+    public string getName()
     {
-        return interactableObjects;
+        return interact;
     }
 
     public int getCount()
@@ -46,7 +44,6 @@ public class Objectcount : MonoBehaviour
         count = 0;
         obcount = GameObject.FindGameObjectsWithTag("GameController");
         Score_count = GameObject.Find("Score_count").GetComponent<Text>();
-        gm = GetComponent<GameManager>();
     }
 
     private void Update()
@@ -56,7 +53,7 @@ public class Objectcount : MonoBehaviour
 
     private void OnSelectEntered(SelectEnterEventArgs args)
     {
-        Debug.Log("Object grabbed: " + args.interactable.transform.gameObject.name);
+        Debug.Log("Object grabbed: " + args.interactableObject.transform.gameObject.name);
 
         // 선택된 오브젝트가 원하는 타입이나 태그를 가지고 있는지 확인
         if (args.interactableObject.transform.CompareTag("GameController"))
@@ -67,18 +64,15 @@ public class Objectcount : MonoBehaviour
             {
                 if (args.interactableObject.transform.gameObject == beforeobj[i])
                 {
-                    if(afterobj[i] == empty)
+                    interact = args.interactableObject.transform.name;
+                    if (afterobj[i] == empty)
                     {
                         beforeobj[i].SetActive(false);
-                        interactableObjects[i] = args.interactable.transform.gameObject.name;
                     } else
                     {
                         beforeobj[i].SetActive(false);
                         afterobj[i].SetActive(true);
-                        interactableObjects[i] = args.interactable.transform.gameObject.name;
                     }
-                    
-
                     SetCountText();
                 }
             }

@@ -89,7 +89,8 @@ public class GameManager : MonoBehaviour
 
     public void OnClickStartButton()
     {
-        time = 50f;
+        PlayerPrefs.SetInt("Loop", 0);
+        time = 10f;
         timeLimit = 0.0f;
         CoverImage.SetActive(false);
         isChecked = true;
@@ -129,6 +130,7 @@ public class GameManager : MonoBehaviour
 
     public void BacktoLobby()
     {
+        PlayerPrefs.SetInt("PlayCount", 0);
         SceneManager.LoadScene(1);
     }
     

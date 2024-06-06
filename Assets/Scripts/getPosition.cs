@@ -45,22 +45,22 @@ public class getPosition : MonoBehaviour
         // height of dynamic panel
         var currentHeight = content.rect.height;
         
+        count = wordCount(contentText.text, "\n");
         gap = (currentHeight - origin) / 2;
-        count = wordCount(contentText.text, "\n") + 1;
 
         // if the height is changed
         if (gap != 0)
         {
-            leftbar.sizeDelta = new Vector2(leftbarInitialSize.x, leftbarInitialSize.y + gap * count);
-            rightbar.sizeDelta = new Vector2(rightbarInitialSize.x, rightbarInitialSize.y + gap * count);
-            panel.sizeDelta = new Vector2(panelInitialSize.x, panelInitialSize.y + gap * count);
+            leftbar.sizeDelta = new Vector2(leftbarInitialSize.x, leftbarInitialSize.y + gap);
+            rightbar.sizeDelta = new Vector2(rightbarInitialSize.x, rightbarInitialSize.y + gap);
+            panel.sizeDelta = new Vector2(panelInitialSize.x, panelInitialSize.y + gap);
 
             top.localPosition += new Vector3(0, gap, 0);
             bottom.localPosition += new Vector3(0, -gap, 0);
 
             origin = currentHeight;
 
-            Debug.Log(gap);
+            Debug.Log("count: "+count + " gap: " + gap + "gapcount " + gap*count);
         }
     }
 
