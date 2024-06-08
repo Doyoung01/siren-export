@@ -4,6 +4,7 @@ using System.Collections;
 public class ParticleSystemController : MonoBehaviour
 {
     public ParticleSystem particleSystem; // 파티클 시스템 참조
+
     public float growthDuration = 20f;   // 속성 증가 지속 시간
     public float startDelay = 2f;        // 시작 지연 시간
     private float timeElapsed = 0f;      // 경과 시간
