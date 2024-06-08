@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4430340635691708}
+  - component: {fileID: 7066574978523734028}
   - component: {fileID: 198663536934198432}
   - component: {fileID: 199770912466261370}
-  - component: {fileID: 7066574978523734028}
+  - component: {fileID: 3879284377251273128}
   m_Layer: 0
   m_Name: LargeFlames
   m_TagString: Untagged
@@ -34,6 +35,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &7066574978523734028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901245927194888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fc4c6ffe1a042f4981a01b4d980c6ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleSystem: {fileID: 198663536934198432}
+  growthDuration: 20
+  startDelay: 5
+  endSize: 8
+  endRate: 10
+  endRadius: 3
 --- !u!198 &198663536934198432
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -51,7 +70,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 1
   prewarm: 0
-  playOnAwake: 0
+  playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -4850,7 +4869,7 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &7066574978523734028
+--- !u!114 &3879284377251273128
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4859,12 +4878,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1901245927194888}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fc4c6ffe1a042f4981a01b4d980c6ab, type: 3}
+  m_Script: {fileID: 11500000, guid: cec5674842b50a94d825b9ce4006da76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleSystem: {fileID: 198663536934198432}
-  growthDuration: 20
-  startDelay: 2
-  endSize: 8
-  endRate: 10
-  endRadius: 3
+  currentIntensity: 0.033
+  fireParticleSystems:
+  - {fileID: 198663536934198432}
