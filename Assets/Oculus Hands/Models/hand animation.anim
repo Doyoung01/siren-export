@@ -128,7 +128,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.16666667
-        value: {x: -60.396, y: 28.849, z: 30.84}
+        value: {x: -60.396, y: 28.849, z: 48.5129}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -1752,7 +1752,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.16666667
-        value: 30.84
+        value: 48.5129
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -1812,7 +1812,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Rig/Finger1/Finger1_target
+    path: Rig/Finger5/Finger5_target
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1824,7 +1824,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Rig/Finger1/Finger1_target
+    path: Rig/Finger5/Finger5_target
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1836,7 +1836,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Rig/Finger1/Finger1_target
+    path: Rig/Finger5/Finger5_target
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1920,7 +1920,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: Rig/Finger5/Finger5_target
+    path: Rig/Finger1/Finger1_target
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1932,7 +1932,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: Rig/Finger5/Finger5_target
+    path: Rig/Finger1/Finger1_target
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1944,7 +1944,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: Rig/Finger5/Finger5_target
+    path: Rig/Finger1/Finger1_target
     classID: 4
     script: {fileID: 0}
     flags: 0
