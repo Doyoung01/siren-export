@@ -1,3 +1,4 @@
+//오른손까지 고정된 코드
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,14 @@ public class FireExtinguisherInteraction : MonoBehaviour
     public XRRayInteractor rayInteractor; // XR Ray Interactor에 대한 참조
     public Transform parentObject;  // 부모 오브젝트를 미리 할당 (이름 필요 없음)
 
+    // 왼손과 오른손 Transform을 참조하도록 수정
+    public Transform leftHandTransform;  // 왼손 Transform
+    public Transform rightHandTransform; // 오른손 Transform
+
     private GameObject fireObject; // 비활성화된 자식 오브젝트를 찾기 위한 변수
+
+    // 추가된 변수
+    private bool isRightHandLocked = false; // 오른손 움직임을 잠그는 플래그
 
     private void Start()
     {
@@ -51,6 +59,12 @@ public class FireExtinguisherInteraction : MonoBehaviour
 
             // 손 애니메이션 실행
             PlayHandAnimations();
+
+            // 오른손을 왼손의 자식으로 설정하고 움직임 잠금
+            SetRightHandAsChildOfLeftHand();
+
+            // 오른손 움직임 잠금 활성화
+            LockRightHandMovement();
         }
     }
 
@@ -106,6 +120,64 @@ public class FireExtinguisherInteraction : MonoBehaviour
         if (rightHandAnimator != null)
         {
             rightHandAnimator.SetTrigger("GrabFireExtinguisherRight");
+        }
+    }
+
+    // 오른손을 왼손의 자식으로 설정하고 움직임을 잠그는 함수
+    private void SetRightHandAsChildOfLeftHand()
+    {
+        if (leftHandTransform != null && rightHandTransform != null)
+        {
+            // 오른손을 왼손의 자식으로 설정
+            rightHandTransform.SetParent(leftHandTransform);
+            Debug.Log("오른손이 왼손의 자식으로 설정되었습니다.");
+        }
+        else
+        {
+            Debug.LogWarning("왼손 또는 오른손 Transform이 설정되지 않았습니다.");
+        }
+    }
+
+    // 오른손의 움직임을 잠그는 함수
+    private void LockRightHandMovement()
+    {
+        if (rightHandTransform != null)
+        {
+            // 오른손의 스크립트 비활성화
+            MonoBehaviour[] rightHandScripts = rightHandTransform.GetComponents<MonoBehaviour>();
+            foreach (MonoBehaviour script in rightHandScripts)
+            {
+                script.enabled = false;
+            }
+
+            // 오른손의 리지드바디를 키네마틱으로 설정
+            Rigidbody rightHandRigidbody = rightHandTransform.GetComponent<Rigidbody>();
+            if (rightHandRigidbody != null)
+            {
+                rightHandRigidbody.isKinematic = true;
+            }
+
+            // 오른손의 위치와 회전을 원하는 값으로 설정
+            rightHandTransform.localPosition = new Vector3(0.200000003f, -0.0700000003f, -0.0299999993f);
+            rightHandTransform.localRotation = Quaternion.Euler(346.300018f, 358.279999f, 334.600006f);
+
+            // 오른손 움직임 잠금 플래그 설정
+            isRightHandLocked = true;
+        }
+        else
+        {
+            Debug.LogWarning("오른손 Transform이 설정되지 않았습니다.");
+        }
+    }
+
+    // Update 함수에서 오른손의 위치를 고정
+    private void Update()
+    {
+        if (isRightHandLocked && rightHandTransform != null)
+        {
+            // 오른손의 로컬 위치와 회전을 고정
+            rightHandTransform.localPosition = new Vector3(0.200000003f, -0.0700000003f, -0.0299999993f);
+            rightHandTransform.localRotation = Quaternion.Euler(346.300018f, 358.279999f, 334.600006f);
         }
     }
 
