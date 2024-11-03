@@ -15,7 +15,7 @@ public class fireScale : MonoBehaviour
     [SerializeField] private ParticleSystem firePS = null;
 
     private float time = 0f;
-    [SerializeField] private float spreadSpeed = 0.02f; // 불 번지는 속도
+    [SerializeField] private float spreadSpeed = 0.001f; // 불 번지는 속도
 
     private void Start()
     {
@@ -65,9 +65,9 @@ public class fireScale : MonoBehaviour
         var main = firePS.main;
 
         // 현재 파티클 크기가 최대치(10)보다 작을 때만 크기를 증가시키기
-        if (main.startSize.constant < 10f)
+        if (main.startSize.constant < 4f)
         {
-            main.startSize = Mathf.Min(main.startSize.constant + 0.5f * Time.deltaTime, 10f); // 크기 증가, 1초에 0.5씩 증가
+            main.startSize = Mathf.Min(main.startSize.constant + 0.5f * Time.deltaTime, 4f); // 크기 증가, 1초에 0.5씩 증가
         }
     }
 }
