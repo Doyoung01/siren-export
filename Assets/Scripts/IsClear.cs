@@ -13,14 +13,14 @@ public class IsClear : MonoBehaviour
     [Header("Clear Window")]
     public GameObject clear; // 클리어창
 
-    private GameObject tmpObject;
     private GameManager gm;
+    private modifyTextMeshPro mtm;
 
     // Start is called before the first frame update
     void Start()
     {
-        tmpObject = GameObject.Find("GameManager");
-        gm = tmpObject.GetComponent<GameManager>();
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        mtm = GameObject.Find("GameManager").GetComponent<modifyTextMeshPro>();
     }
 
     // Update is called once per frame
@@ -28,29 +28,11 @@ public class IsClear : MonoBehaviour
     {
         if (gm.isActiveInfo())
         {
-            if (checkingActive() && !execute)
+            if (mtm.countChildren() == 0 && !execute && mtm.activeCanvases())
             {
                 clear.SetActive(true);
                 execute = true;
             }
         }
-    }
-
-    private bool checkingActive()
-    {
-        flag = true;
-
-        for (int i = 0; i < infoWindows; i++)
-        {
-            // Debug.Log("infoW : " + infoWindows + ", i : " + i);
-            if (transform.GetChild(i).gameObject.activeSelf)
-            {
-                // Debug.Log(transform.GetChild(i).gameObject.name);
-                flag = false;
-                break;
-            }
-        }
-
-        return flag;
     }
 }

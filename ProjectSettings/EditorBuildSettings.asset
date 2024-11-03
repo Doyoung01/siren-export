@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
     path: Assets/Scenes/1.MainMenu Scene.unity
     guid: ba18b8bc55b794e4da2e0a76c4bd2fb8
@@ -17,14 +14,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/3-1.Factory VR Scene.unity
     guid: 74c6a565bbbcc0846bf3b7c78c2132fc
-  - enabled: 0
-    path: Assets/Scenes/RE)Restaurant.unity
-    guid: 886e98ac0576d1c47b8e8f0c9d5abaad
+  - enabled: 1
+    path: Assets/Scenes/3-2.Restaurant.unity
+    guid: dd5e0f3ff0833ef4aaa43b6350714c1f
   - enabled: 1
     path: Assets/Scenes/3-3.House.unity
     guid: 34f35b9ce65192e459b2ada2e5f90bb4
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 6518a8765550d1246b098bd597fa36cf,
+      type: 2}
+    com.unity.addressableassets: {fileID: 11400000, guid: 1a89116a9d8ad824986e2348c8ba0612,
+      type: 2}
+    com.unity.localization.settings: {fileID: 11400000, guid: 2fcb0c596beecbe428390b3f7da721fd,
       type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 8e3d27b21536d0949a1539dfae08bedf,
       type: 2}

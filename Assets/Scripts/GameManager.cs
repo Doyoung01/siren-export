@@ -7,6 +7,8 @@ using UnityEngine.InputSystem;
 using System.Threading;
 using Unity.VisualScripting;
 using System.Data;
+using Oculus.Interaction.UnityCanvas;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManager : MonoBehaviour
 {
@@ -26,17 +28,17 @@ public class GameManager : MonoBehaviour
     public GameObject CoverImage;
     int min;
     float sec;
-    bool isChecked = false;
-    bool hasAppeared = false;
+    private bool isChecked = false;
+    private bool hasAppeared = false;
 
     [Header("BGM")]
     private AudioSource audio;
     private float speed;
 
-    [Header("Is Clear?")]
+    [Header("Is Clear")]
     private Objectcount countScript;
     private bool isclear = false;
-    public GameObject infoWindows;
+    public GameObject canvases;
     public AudioClip applause;
 
     [Header("Clear Window")]
@@ -49,19 +51,26 @@ public class GameManager : MonoBehaviour
     private bool isPause;
     float saveButton = 0;
 
+    private static int gamePlay = 0;
+
     public bool isActiveInfo()
     {
-        return infoWindows.activeSelf;
+        return canvases.activeSelf;
     }
-    
+
     public bool getIsclear()
     {
         return isclear;
     }
 
-    private void Awake()
+    public bool getReturnCanvasActive()
     {
+        return RestartButton.activeSelf;
+    }
 
+    public float getTime()
+    {
+        return time;
     }
 
     // Start is called before the first frame update
@@ -72,15 +81,16 @@ public class GameManager : MonoBehaviour
         fires.SetActive(false);
         clear.SetActive(false);
         totalInfo.SetActive(false);
-        infoWindows.SetActive(false);
         pauseWindow.SetActive(false);
+        canvases.SetActive(false);
         audio = GetComponent<AudioSource>();
         countScript = GetComponent<Objectcount>();
     }
 
     public void OnClickStartButton()
     {
-        time = 100f;
+        PlayerPrefs.SetInt("Loop", 0);
+        time = 5f; // 제한 시간 설정
         timeLimit = 0.0f;
         CoverImage.SetActive(false);
         isChecked = true;
@@ -111,8 +121,16 @@ public class GameManager : MonoBehaviour
         clear.SetActive(false);
         totalInfo.SetActive(true);
     }
+
+    public void OnclickClearButton()
+    {
+        totalInfo.SetActive(false);
+        clear.SetActive(true);
+    }
+
     public void BacktoLobby()
     {
+        PlayerPrefs.SetInt("PlayCount", 0);
         SceneManager.LoadScene(1);
     }
     
@@ -121,6 +139,7 @@ public class GameManager : MonoBehaviour
         audio.pitch = spd;
         // audio.outputAudioMixerGroup.audioMixer.SetFloat("Pitch", 1f / spd);
     }
+
 
 
     // Update is called once per frame
@@ -160,8 +179,8 @@ public class GameManager : MonoBehaviour
                 if (countScript.getCount() == countScript.getObcount())
                 {
                     isChecked = false;
-                    infoWindows.SetActive(true);
                     isclear = true;
+                    canvases.SetActive(true);
                     audio.Stop();
                     audio.clip = applause;
                     audio.Play();
@@ -210,6 +229,7 @@ public class GameManager : MonoBehaviour
                     audio.clip = audioClip;
                     audio.pitch = 0.7f;
                     volume();
+                    PlayerPrefs.SetInt("PlayCount", ++gamePlay);
                 }
             }
         }

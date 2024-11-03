@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: MainMenu Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: MainMenu
+  m_TableCollectionNameGuidString: d5e40e9b5faa383408302147de8b6c34
+  m_Entries:
+  - m_Id: 10937856000
+    m_Key: New Entry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 105901092864
+    m_Key: Start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 109260730368
+    m_Key: Options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 111710203904
+    m_Key: About
+    m_Metadata:
+      m_Items: []
+  - m_Id: 114205814784
+    m_Key: Quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 558198059008
+    m_Key: En
+    m_Metadata:
+      m_Items: []
+  - m_Id: 561289261056
+    m_Key: Ko
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 6719997447643070492
+  references:
+    version: 2
+    RefIds:
+    - rid: 6719997447643070492
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables,
+        asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1730646744046
