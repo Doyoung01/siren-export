@@ -1,0 +1,159 @@
+{
+    "ko": {
+      "ftitleList": [
+        "용접 기계 작업 시 주의사항",
+        "흡연",
+        "화재용품 구역의 가연성 물질 보관 위치",
+        "화재용품 구역의 가연성 물질 보관 위치",
+        "화재용품 구역의 가연성 물질 보관 위치",
+        "화재용품 구역의 가연성 물질 보관 위치",
+        "기계 과열",
+        "기계 충돌",
+        "먼지로 인한 스파크 화재",
+        "소화기 주변 장애물"
+      ],
+      "fcontentList1": [
+        "어제 용접 화재가 꺼지지 않았습니다.",
+        "불이 붙은 담배가 가연성 물질인 코트에 닿았습니다.",
+        "용접 불꽃이 보호되지 않은 가연성 물질에 닿아 불이 붙었습니다.",
+        "용접 불꽃이 보호되지 않은 가연성 물질에 닿아 불이 붙었습니다.",
+        "용접 불꽃이 보호되지 않은 가연성 물질에 닿아 불이 붙었습니다.",
+        "용접 불꽃이 보호되지 않은 가연성 물질에 닿아 불이 붙었습니다.",
+        "기계가 오랫동안 작동하여 모터와 엔진이 너무 뜨거워졌습니다.",
+        "작업자가 기계를 잘못 작동하여 서로 충돌했습니다.",
+        "용접 불꽃이 공기 중 먼지와 만나 폭발했습니다.",
+        "소화기 주변에 너무 많은 상자가 있어 재를 신속히 진화할 수 없었습니다."
+      ],
+      "fcontentList2": [
+        "작업 후 퇴근하기 전 현장을 다시 점검하는 것이 필요합니다. 또한 소화기를 바로 옆에 두는 것이 좋습니다.",
+        "흡연 구역에서만 흡연하며, 담뱃불이 완전히 꺼졌는지 확인 후 버리세요. 또한 종이컵이 아닌 깊은 도자기나 유리 재떨이를 사용하세요.",
+        "주변에서 불이 붙을 수 있는 물건을 최소 11m 이상 떨어뜨리거나 방화 덮개나 금속 방패로 보호하세요.",
+        "주변에서 불이 붙을 수 있는 물건을 최소 11m 이상 떨어뜨리거나 방화 덮개나 금속 방패로 보호하세요.",
+        "주변에서 불이 붙을 수 있는 물건을 최소 11m 이상 떨어뜨리거나 방화 덮개나 금속 방패로 보호하세요.",
+        "주변에서 불이 붙을 수 있는 물건을 최소 11m 이상 떨어뜨리거나 방화 덮개나 금속 방패로 보호하세요.",
+        "정기적으로 기계를 점검하고 유지보수하세요. 또한 기계 위치가 덥다면 냉각 팬을 설치하거나 적절한 환기를 고려하세요.",
+        "작업자가 기계를 잘못 작동하여 서로 충돌했습니다.",
+        "이러한 먼지 폭발 사고를 방지하려면 진공청소기 등으로 먼지 축적을 방지하고 점화 요소를 제거해야 합니다.",
+        "소화기가 많은 짐으로 둘러싸여 있으면 필요할 때 제대로 사용할 수 없습니다."
+      ],
+      "rtitleList": [
+        "가스 불꽃 근처의 가연성 물질",
+        "프라이어 사용 후 전원을 끄지 않음",
+        "가스관의 가스 누출",
+        "장기간 에어컨 사용",
+        "일반 소화기 사용 문제",
+        "주방 후드의 기름때"
+      ],
+      "rcontentList1": [
+        "가스 불꽃 근처에 가연성 물질을 두면 화재가 확산될 수 있습니다.",
+        "프라이어를 계속 켜두면 프라이어와 기름이 과열되어 화재가 발생할 수 있습니다.",
+        "가스가 누출되었습니다.",
+        "장기간 사용으로 에어컨이 과열되었습니다.",
+        "화재 안전 규정에 따르면 식당에는 K급 소화기가 있어야 합니다.",
+        "요리 중 후드에 축적된 기름때로 인해 화재가 발생할 수 있습니다."
+      ],
+      "rcontentList2": [
+        "가스레인지 근처에 가연성 물질을 두지 마세요.",
+        "요리할 음식이 없을 때 전원을 꺼서 프라이어와 기름의 온도를 낮추세요.",
+        "가스관과 연결부를 정기적으로 점검하고 누출이 발견되면 자동으로 가스를 차단하는 안전 밸브나 자동 차단 시스템을 설치할 수 있습니다.",
+        "과도한 에어컨 사용은 전선의 전기 스파크를 일으킬 수 있으며, 실외기 또한 과열될 수 있습니다. 에어컨의 전선 상태를 정기적으로 확인하고 과열을 방지하세요.",
+        "25m² 이하의 주방에는 K급 소화기를, 25m² 이상인 경우 K급과 분말 소화기를 모두 구비해야 합니다. 소화기 압력 게이지도 정기적으로 점검하세요.",
+        "후드 필터는 정기적으로 청소하여 기름이 쌓이지 않도록 해야 합니다."
+      ],
+      "htitleList": [
+        "전기 패드",
+        "음식 조리",
+        "멀티탭 화재",
+        "담배꽁초 화재",
+        "헤어 드라이어 화재",
+        "토스터 화재"
+      ],
+      "hcontentList1": [
+        "두꺼운 담요와 함께 전기 바닥보일러를 장시간 사용하여 열이 빠져나가지 않아 고온으로 인해 화재가 발생할 수 있습니다.",
+        "조리 중 음식을 방치할 경우 장시간 가스 화재 사용으로 인해 화재가 발생할 수 있습니다.",
+        "멀티탭에 과부하가 걸려 화재가 발생했습니다.",
+        "담배 꽁초를 버리기 전에 불씨를 확인하지 않아 화재가 발생했습니다.",
+        "헤어 드라이어를 장시간 켜두어 화재가 발생했습니다.",
+        "토스터 내부의 빵 부스러기, 먼지 등으로 인해 화재가 발생했습니다."
+      ],
+      "hcontentList2": [
+        "두꺼운 이불과 전기 바닥보일러를 함께 사용하지 마세요.",
+        "조리 중 음식은 최대한 방치하지 마시고, 조리 후 가스를 끄세요.",
+        "멀티탭을 과부하로 사용하지 말고, 보호 기능이 있는 멀티탭을 사용하세요.",
+        "담배 꽁초를 버리기 전 항상 불씨를 확인하세요.",
+        "헤어 드라이어를 사용 후 반드시 전원을 끄고, 습기가 많은 곳에 보관하지 마세요.",
+        "정기적으로 먼지와 부스러기를 청소하고, 사용 후 플러그를 뽑으세요."
+      ]
+    },
+    "en": {
+      "ftitleList": [
+        "When working with a welding machine",
+        "Smoking",
+        "Where to store combustible materials in a fire-use area",
+        "Overheating of the machine",
+        "Machine collision",
+        "Spark fire caused by dust",
+        "Obstacles around the extinguisher"
+      ],
+      "fcontentList1": [
+        "Yesterday's welding fire was alive.",
+        "A lit cigarette was touched on a coat, which is a combustible material.",
+        "A welding spark came into contact with unprotected combustible material and ignited.",
+        "The machine has been running for a long time, causing the motor and engine to become too hot.",
+        "A worker operated the machines incorrectly and they collided with each other.",
+        "A welding spark met with dust in the air and exploded.",
+        "There were too many boxes around the fire extinguisher to put out the embers quickly."
+      ],
+      "fcontentList2": [
+        "It's also a good idea to keep a fire extinguisher or fire extinguisher right next to you.",
+        "Only Smoke in smoking areas, and make sure that the embers are completely extinguished before throwing it away.",
+        "Remove anything that could catch fire from the surrounding area far away, at least 11m, or protect it with fire covers.",
+        "Check and maintain the machine regularly.",
+        "To prevent dust explosion accidents, remove dust and ignition sources.",
+        "Fire extinguishers should be placed in a visible location."
+      ],
+      "rtitleList": [
+        "Combustible materials near a gas flame",
+        "Not turning off the power after using the fryer",
+        "Gas leak in gas pipeline",
+        "Long-term use of air conditioner",
+        "Problems using regular fire extinguishers",
+        "Grease stains on the kitchen hood"
+      ],
+      "rcontentList1": [
+        "Placing flammable materials near a gas flame can cause a fire to spread.",
+        "If the fryer is continuously turned on, the fryer and oil may overheat and cause a fire.",
+        "There is a gas leak.",
+        "The air conditioner overheated due to prolonged use.",
+        "Fire safety standards require restaurants to have Class K fire extinguishers.",
+        "Fire may spread due to grease stains accumulated in the hood from cooking food."
+      ],
+      "htitleList" : [
+        "Electric pad",
+        "Cooking food",
+        "Multi-tap fire",
+        "Cigarette butts fire",
+        "Hair dryer fire",
+        "Toaster fire"
+      ],
+      "hcontentList1" : [
+        "Electric floorboards were used with thick blankets for a long time. This prevents heat from escaping and can cause fires due to high temperatures.",
+        "Food left in the cooking. Long periods of gas fire use can lead to fires.",
+        "Overloaded with multi-tap octopus, resulting in fire. Excessive current flow may cause a fire.",
+        "The fire started because the cigarette butts did not check the embers after smoking. It's one of the many accidents that occur due to carelessness every year.",
+        "The hair dryer was left on, causing a fire. Turning on the hair dryer for a long time may cause a fire due to heat.",
+        "The fire was caused by bread crumbs, dust, etc. inside the toaster. You need to be careful as it is a device that uses heat."
+      ],
+      "hcontentList2" : [
+        "Avoid using electric floorboards, thick yarns, blankets, etc. together. Additionally, you must verify that the product is safety certified and unplug it if not in use.",
+        "Do not leave food as much as possible while cooking. Make sure the gas heat is turned off after cooking, and no additional combustible substances are placed near the fire.",
+        "You should refrain from using a multi-tap octopus, and we recommend using a multi-tap with overload protection. It is also recommended that you refrain from using it if there is a problem with the wire cladding.",
+        "Always check for embers before throwing away cigarette butts after smoking, and never throw them near combustible substances. Additionally, you should be careful when discarding the ashtray as there may still be embers left.",
+        "It is recommended to turn off the hair dryer after use and to pull out the cord line. In addition, care must be taken for foreign substances or dust in the inlet and do not store it in a damp place.",
+        "Periodic cleaning of dust and breadcrumbs is required, and unplugging is recommended after use. Additionally, metal substances should not be inserted after use of the toaster, and the toaster should not be applied with butter."
+      ]
+    }
+}
+
+  
+  
