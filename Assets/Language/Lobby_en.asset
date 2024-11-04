@@ -17,7 +17,27 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: 7216ccc1d2e5cc141a3ac8f72d96f628, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 21602131968
+    m_Localized: Stage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 102661251072
+    m_Localized: Factory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 163881312256
+    m_Localized: Restaurant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 241257832448
+    m_Localized: House
+    m_Metadata:
+      m_Items: []
+  - m_Id: 391246143488
+    m_Localized: Back
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

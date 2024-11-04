@@ -17,6 +17,12 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 166e0c119a5fab24390ab7eed542401f
   m_SerializeEntries:
+  - m_GUID: 0813d7d1e1a8ee847a7addf592b638e9
+    m_Address: Lobby_ko
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 089b2434a8f006c46ae97b6a67bec20b
     m_Address: MainMenu_ko
     m_ReadOnly: 1
