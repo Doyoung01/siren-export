@@ -32,6 +32,16 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d6537783709391640a48a6becf3fbdff
+    m_Address: Assets/Language/WindowButton_House Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ddbd9c894638b2141982ee5bdbdafd40
+    m_Address: Assets/Language/House_Title Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ea950ab3aef4a474794520d3a960d891
     m_Address: Assets/Language/MainMenu_About Shared Data.asset
     m_ReadOnly: 1

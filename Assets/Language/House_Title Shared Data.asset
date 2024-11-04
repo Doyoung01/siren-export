@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: House_Title Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: House_Title
+  m_TableCollectionNameGuidString: ddbd9c894638b2141982ee5bdbdafd40
+  m_Entries:
+  - m_Id: 5856714752
+    m_Key: Toaster fire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 194088689664
+    m_Key: Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 233649364992
+    m_Key: Hair dryer fire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 306781249536
+    m_Key: Cooking food
+    m_Metadata:
+      m_Items: []
+  - m_Id: 551762157568
+    m_Key: Cigarette butts fire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 663313866752
+    m_Key: Oh my god, FIRE!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 820587683840
+    m_Key: Finally home!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 927064285184
+    m_Key: Multi-tap fire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1102201643008
+    m_Key: Electric blanket fire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1498508845056
+    m_Key: Congratulations. You're alive!
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 6719997458390450203
+  references:
+    version: 2
+    RefIds:
+    - rid: 6719997458390450203
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables,
+        asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1730689543287

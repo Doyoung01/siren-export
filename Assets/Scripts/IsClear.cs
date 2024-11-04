@@ -1,38 +1,54 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization.Components;
 
 public class IsClear : MonoBehaviour
 {
-    // All Info Canvas¿¡ ÇØ´ç ½ºÅ©¸³Æ®¸¦ Ãß°¡ÇÒ °Í
     [Header("All Information Windows")]
-    public int infoWindows; // ¸ğµç ÀÎÆ÷Ã¢ °³¼ö
-    private bool flag; // ¸ğµÎ ºñÈ°¼ºÈ­ µÆ´Â°¡?
-    private bool execute = false; // ½ºÅ©¸³Æ®°¡ ÇÑ ¹ø ½ÇÇàµÇ¾ú´Â°¡?
+    public int infoWindows;
+    private bool execute = false;
 
     [Header("Clear Window")]
-    public GameObject clear; // Å¬¸®¾îÃ¢
+    public GameObject clearWindow;
 
     private GameManager gm;
     private modifyTextMeshPro mtm;
 
-    // Start is called before the first frame update
-    void Start()
+    // Localization
+    public LocalizeStringEvent titleLocalizationEvent;
+    public LocalizeStringEvent contentLocalizationEvent;
+
+    private void Start()
     {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         mtm = GameObject.Find("GameManager").GetComponent<modifyTextMeshPro>();
+
+        // ì°½ì„ ê¸°ë³¸ì ìœ¼ë¡œ ë¹„í™œì„±í™”
+        clearWindow.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (gm.isActiveInfo())
+        // ì¡°ê±´ì„ ì¶©ì¡±í•˜ë©´ ì°½ í™œì„±í™” ë° ë¡œì»¬ë¼ì´ì§• ì ìš©
+        if (gm.isActiveInfo() && mtm.countChildren() == 0 && !execute && mtm.activeCanvases())
         {
-            if (mtm.countChildren() == 0 && !execute && mtm.activeCanvases())
-            {
-                clear.SetActive(true);
-                execute = true;
-            }
+            clearWindow.SetActive(true);
+            ApplyLocalization(); // ë¡œì»¬ë¼ì´ì§• ì ìš©
+            execute = true;
+        }
+    }
+
+    private void ApplyLocalization()
+    {
+        if (titleLocalizationEvent != null && contentLocalizationEvent != null)
+        {
+            titleLocalizationEvent.RefreshString();
+            contentLocalizationEvent.RefreshString();
+        }
+        else
+        {
+            Debug.LogError("Localization events are not assigned.");
         }
     }
 }

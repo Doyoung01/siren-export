@@ -35,8 +35,20 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-ko
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b946bcebbe74c2e4da7e4b53799d44ae
+    m_Address: House_Title_ko
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bb93a71cc7c106f47b6a73c1e98ea912
     m_Address: MainMenu_About_ko
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dd5fdc14789cb814f8696534194c6fb1
+    m_Address: WindowButton_House_ko
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-ko
