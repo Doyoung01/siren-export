@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: WindowContents Shared Data
   m_EditorClassIdentifier: 
   m_TableCollectionName: WindowContents
-  m_TableCollectionNameGuidString: 00000000000000000000000000000000
-  m_Entries: []
+  m_TableCollectionNameGuidString: d2da765bfa302bb469940a49c2fa2627
+  m_Entries:
+  - m_Id: 5384597504
+    m_Key: Stage info
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

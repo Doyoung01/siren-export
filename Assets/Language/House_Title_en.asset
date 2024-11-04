@@ -58,6 +58,10 @@ MonoBehaviour:
     m_Localized: Congratulations. You're alive!
     m_Metadata:
       m_Items: []
+  - m_Id: 90704570380288
+    m_Localized: You Failed.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

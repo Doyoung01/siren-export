@@ -22,6 +22,18 @@ MonoBehaviour:
     m_Localized: Return to Game
     m_Metadata:
       m_Items: []
+  - m_Id: 6319837966336
+    m_Localized: Game Start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8949981147136
+    m_Localized: Restart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9032063676416
+    m_Localized: Back to Lobby
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

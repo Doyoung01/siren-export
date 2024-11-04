@@ -19,6 +19,18 @@ MonoBehaviour:
     m_Key: Return to Game
     m_Metadata:
       m_Items: []
+  - m_Id: 6319837966336
+    m_Key: Game Start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8949981147136
+    m_Key: Restart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9032063676416
+    m_Key: Back to Lobby
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

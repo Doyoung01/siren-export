@@ -55,6 +55,10 @@ MonoBehaviour:
     m_Key: Congratulations. You're alive!
     m_Metadata:
       m_Items: []
+  - m_Id: 90704570380288
+    m_Key: You Failed.
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

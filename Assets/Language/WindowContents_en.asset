@@ -17,7 +17,14 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: d2da765bfa302bb469940a49c2fa2627, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 5384597504
+    m_Localized: "   You've made it home safely.\r\n\r\n   You entered the front
+      door with exhausted body,\r\n   - Oh my god!\r\n   You realized you didn't
+      turn off the fluorescent lights before leaving.\r\n\r\n   - ...Wait, did I
+      turn off the gas?\r\n\r\n Find and clear away 6 fire hazards!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
