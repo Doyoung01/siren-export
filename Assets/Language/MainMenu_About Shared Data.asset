@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: MainMenu_About Shared Data
   m_EditorClassIdentifier: 
   m_TableCollectionName: MainMenu_About
-  m_TableCollectionNameGuidString: 00000000000000000000000000000000
-  m_Entries: []
+  m_TableCollectionNameGuidString: ea950ab3aef4a474794520d3a960d891
+  m_Entries:
+  - m_Id: 10579501056
+    m_Key: About_content
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

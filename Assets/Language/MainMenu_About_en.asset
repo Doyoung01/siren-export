@@ -17,7 +17,16 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: ea950ab3aef4a474794520d3a960d891, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 10579501056
+    m_Localized: 'This game was made by team Siren in 8 months.
+
+
+      This is an
+      educational game that raises awareness of the danger of fire in everyday life
+      through interaction with ignition factors.'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
