@@ -12,27 +12,36 @@ public class makeHint : MonoBehaviour
     private Objectcount oc;
     public TMP_Text hintText;
 
-    // ªÛ»£¿€øÎ«— æ∆¿Ã≈€¿« ¿Ã∏ß
+    //   »£ €ø              Ã∏ 
     Dictionary<int, string> objectName = new Dictionary<int, string>();
-    // ªÛ»£¿€øÎ«— æ∆¿Ã≈€¿« ¿Œµ¶Ω∫ ≥—πˆ
+    //   »£ €ø              Œµ     —π 
     Dictionary<string, int> factory = new Dictionary<string, int>();
     Dictionary<string, int> restaurant = new Dictionary<string, int>();
     Dictionary<string, int> house = new Dictionary<string, int>();
     string[] fhintString = {
-        "∫“ø° ¿ﬂ ≈∏¥¬ π∞∞«¿Ã... ∞¯¿Âø°?", "æÓøÏ, ¿Ã ∏≈ƒ≥«— ≥øªı¥¬ ππæﬂ?", 
-        "ƒ›∑œƒ›∑œ! ∞¯±‚∞° ≥ π´ æ» ¡¡¿∫µ•...", "ø©±‚ ¡ª ∏π¿Ã ¥˛¡ˆ æ æ∆? ø¯∑° ¿Ã∑∏∞‘ ∂ﬂ∞Ã¡ˆ æ æ“¥¬µ•...",
-        "æÓøÏ, Ω√≤Ù∑Øøˆ! ¿Ã ºËº“∏Æ¥¬ ππæﬂ?", "æÓµº≠ ≈∏¥⁄≈∏¥⁄ º“∏Æ∞° ≥™¥¬µ•?",
-        "ø©±‚ ¿÷¥¯ º“»≠±‚ æÓµ∞¨æÓ?"
+        "Ïò§ Ïù¥Îü∞! Ïñ¥ÎîîÏÑ†Í∞Ä Ïó∞Í∏∞Í∞Ä ÎÇòÎäî Í≤É Í∞ôÏùÄÎç∞... Í≥µÏû•ÏóêÏÑú?",
+        "Ïùå, Ï†Ä ÏÜåÌôîÍ∏∞Í∞Ä ÏûëÎèôÌïòÍ≥† ÏûàÏùÑÍπå?",
+        "Ï°∞Ïã¨Ìï¥! Ï†Ä Í∏∞Í≥ÑÍ∞Ä ÎÑàÎ¨¥ Îú®Í±∞Ïõå Î≥¥Ïù¥ÎäîÎç∞...",
+        "Í∞ÄÏä§Î•º ÍªêÎÇòÏöî? Î¨¥Ïñ∏Í∞Ä ÏÉàÍ≥† ÏûàÎäî Í≤É Í∞ôÏïÑÏöî...",
+        "Ïò§ Ïù¥Îü∞! Ï†Ä Îã¥Î∞∞ ÍΩÅÏ¥àÍ∞Ä ÏïÑÏßÅ ÌÉÄÍ≥† ÏûàÎäî Í±¥Í∞ÄÏöî?",
+        "Î∂à Í∑ºÏ≤òÏóê Ï¢ÖÏù¥Í∞Ä ÏûàÎÇòÏöî?",
+        "Î∂à Í∑ºÏ≤òÏóê Í∞ÄÏó∞ÏÑ± Î¨ºÏßàÏù¥ ÏûàÎÇòÏöî?"
     };
     string[] rhintString = {
-        "∑πΩ∫≈‰∂˚»˘∆Æ1", "∑πΩ∫≈‰∂˚»˘∆Æ2",
-        "∑πΩ∫≈‰∂˚»˘∆Æ3", "∑πΩ∫≈‰∂˚»˘∆Æ4",
-        "∑πΩ∫≈‰∂˚»˘∆Æ5", "∑πΩ∫≈‰∂˚»˘∆Æ6",
+        "ÏàòÍ±¥ÏùÑ Ïñ¥ÎîîÎã§ ÎíÄÎçîÎùº..?",
+        "Ïñ¥ÎîîÏÑú Í∏∞Î¶Ñ ÎÉÑÏÉàÍ∞Ä ÎÇòÎäîÎç∞..?",
+        "Ïôú Ïç©ÏùÄ Îã¨Í±Ä ÎÉÑÏÉàÍ∞Ä ÎÇòÏßÄ..",
+        "Îß§Ïû•Ïù¥ ÎÑàÎ¨¥ Ïç®ÎäòÌïúÎç∞.",
+        "ÏÜåÌôîÍ∏∞Í∞Ä Ïù¥ÏÉÅÌïòÎã§..?",
+        "ÌõÑÎìúÏóêÏÑú Í∏∞Î¶ÑÏù¥ Îñ®Ïñ¥Ï†∏...!"
     };
     string[] hhintString = {
-        "¡˝»˘∆Æ1", "¡˝»˘∆Æ2",
-        "¡˝»˘∆Æ3", "¡˝»˘∆Æ4",
-        "¡˝»˘∆Æ5", "¡˝»˘∆Æ6",
+	    "Ïñ¥ÎîîÏÑú ÌÉÄÎäî ÎÉÑÏÉàÍ∞Ä..?",
+	    "ÏïÑÏßÅÎèÑ ÌÉÄÎäî ÎÉÑÏÉàÍ∞Ä ÎÇòÎäîÎç∞..!",
+        "ÎÇòÍ∞àÎïå ÏΩòÏÑºÌä∏Î•º ÍªêÏóàÎÇò?",
+        "Ï£ºÎ∞©ÏóêÏÑú ÏïÑÏßÅÎèÑ Îã¥Î∞∞ÎÉÑÏÉàÍ∞Ä ÎÇòÎÑ§.",
+        "ÌôîÏû•Ïã§ÏóêÏÑú Î¨¥Ïä® ÏÜåÎ¶¨Í∞Ä..",
+	"ÏïÑÏπ®Ïóê Ïπ®ÎåÄÏóêÏÑú Ï†ÑÍ∏∞Ïû•ÌåêÏùÑ ÍªêÏóàÎÇò..?"
     };
 
 
@@ -77,21 +86,21 @@ public class makeHint : MonoBehaviour
     {
         if(scene == 2)
         {
-            // ∞‘¿” «√∑π¿Ã ¡¯«‡¡ﬂ¿œ ∂ß ªÛ»£¿€øÎ«— æ∆¿Ã≈€¿« ¿Ã∏ß¿ª ¿˙¿Â
+            //       √∑                  »£ €ø              Ã∏        
             if ((gm.getTime() >= 0) && (oc.getCount() < oc.getObcount()))
             {
                 var objName = oc.getName();
                 if (objName != null && objectName != null && !objectName.ContainsKey(factory[objName]))
                 {
-                    // Add(«ÿ¥Á ªÛ»£¿€øÎ ø¿∫Í¡ß∆Æø° º≥¡§µ» ≥—πˆ, ±◊ø° ∞¸«— »˘∆Æ º≥∏Ì)
+                    // Add( ÿ¥    »£ €ø        ∆Æ           —π ,  ◊ø         ∆Æ     )
                     objectName.Add(factory[objName], fhintString[factory[objName]]);
                 }
             }
-            // ∞‘¿” ≈¨∏ÆæÓø° Ω«∆–«ﬂ¿ª ∂ß ƒµπˆΩ∫ø° »˘∆Æ∏¶ ∂ÁøÚ
+            //      ≈¨   Óø°             ƒµ         ∆Æ      
             else if (!gm.getIsclear() && gm.getReturnCanvasActive())
             {
                 int play = 0;
-                int num = PlayerPrefs.GetInt("PlayCount", play); // «√∑π¿Ã »Ωºˆ∏¶ ∫“∑Øø»
+                int num = PlayerPrefs.GetInt("PlayCount", play); //  √∑    »Ω      “∑   
                 int loop = 0;
                 int isloop = PlayerPrefs.GetInt("Loop", loop);
 
@@ -104,8 +113,8 @@ public class makeHint : MonoBehaviour
                 {
                     for (int i = 0; i < num && i < fhintString.Length; i++)
                     {
-                        // ªÛ»£¿€øÎ «œ¡ˆ æ æ“∞Ì
-                        // ¿ÃπÃ Ω·¡Æ¿÷¥¬ πÆ±∏∞° æ∆¥—
+                        //   »£ €ø         æ“∞ 
+                        //  Ãπ       ÷¥          ∆¥ 
                         if (!(objectName.ContainsKey(i)))
                             hintText.text += fhintString[i] + "\n";
                     }
@@ -114,21 +123,21 @@ public class makeHint : MonoBehaviour
         }
         else if (scene == 3)
         {
-            // ∞‘¿” «√∑π¿Ã ¡¯«‡¡ﬂ¿œ ∂ß ªÛ»£¿€øÎ«— æ∆¿Ã≈€¿« ¿Ã∏ß¿ª ¿˙¿Â
+            //       √∑                  »£ €ø              Ã∏        
             if ((gm.getTime() >= 0) && (oc.getCount() < oc.getObcount()))
             {
                 var objName = oc.getName();
                 if (objName != null && objectName != null && !objectName.ContainsKey(restaurant[objName]))
                 {
-                    // Add(«ÿ¥Á ªÛ»£¿€øÎ ø¿∫Í¡ß∆Æø° º≥¡§µ» ≥—πˆ, ±◊ø° ∞¸«— »˘∆Æ º≥∏Ì)
+                    // Add( ÿ¥    »£ €ø        ∆Æ           —π ,  ◊ø         ∆Æ     )
                     objectName.Add(restaurant[objName], rhintString[restaurant[objName]]);
                 }
             }
-            // ∞‘¿” ≈¨∏ÆæÓø° Ω«∆–«ﬂ¿ª ∂ß ƒµπˆΩ∫ø° »˘∆Æ∏¶ ∂ÁøÚ
+            //      ≈¨   Óø°             ƒµ         ∆Æ      
             else if (!gm.getIsclear() && gm.getReturnCanvasActive())
             {
                 int play = 0;
-                int num = PlayerPrefs.GetInt("PlayCount", play); // «√∑π¿Ã »Ωºˆ∏¶ ∫“∑Øø»
+                int num = PlayerPrefs.GetInt("PlayCount", play); //  √∑    »Ω      “∑   
                 int loop = 0;
                 int isloop = PlayerPrefs.GetInt("Loop", loop);
 
@@ -141,8 +150,8 @@ public class makeHint : MonoBehaviour
                 {
                     for (int i = 0; i < num && i < rhintString.Length; i++)
                     {
-                        // ªÛ»£¿€øÎ «œ¡ˆ æ æ“∞Ì
-                        // ¿ÃπÃ Ω·¡Æ¿÷¥¬ πÆ±∏∞° æ∆¥—
+                        //   »£ €ø         æ“∞ 
+                        //  Ãπ       ÷¥          ∆¥ 
                         if (!(objectName.ContainsKey(i)))
                             hintText.text += rhintString[i] + "\n";
                     }
@@ -150,21 +159,21 @@ public class makeHint : MonoBehaviour
             }
         } else if (scene == 4)
         {
-            // ∞‘¿” «√∑π¿Ã ¡¯«‡¡ﬂ¿œ ∂ß ªÛ»£¿€øÎ«— æ∆¿Ã≈€¿« ¿Ã∏ß¿ª ¿˙¿Â
+            //       √∑                  »£ €ø              Ã∏        
             if ((gm.getTime() >= 0) && (oc.getCount() < oc.getObcount()))
             {
                 var objName = oc.getName();
                 if (objName != null && objectName != null && !objectName.ContainsKey(house[objName]))
                 {
-                    // Add(«ÿ¥Á ªÛ»£¿€øÎ ø¿∫Í¡ß∆Æø° º≥¡§µ» ≥—πˆ, ±◊ø° ∞¸«— »˘∆Æ º≥∏Ì)
+                    // Add( ÿ¥    »£ €ø        ∆Æ           —π ,  ◊ø         ∆Æ     )
                     objectName.Add(house[objName], hhintString[house[objName]]);
                 }
             }
-            // ∞‘¿” ≈¨∏ÆæÓø° Ω«∆–«ﬂ¿ª ∂ß ƒµπˆΩ∫ø° »˘∆Æ∏¶ ∂ÁøÚ
+            //      ≈¨   Óø°             ƒµ         ∆Æ      
             else if (!gm.getIsclear() && gm.getReturnCanvasActive())
             {
                 int play = 0;
-                int num = PlayerPrefs.GetInt("PlayCount", play); // «√∑π¿Ã »Ωºˆ∏¶ ∫“∑Øø»
+                int num = PlayerPrefs.GetInt("PlayCount", play); //  √∑    »Ω      “∑   
                 int loop = 0;
                 int isloop = PlayerPrefs.GetInt("Loop", loop);
 
@@ -177,8 +186,8 @@ public class makeHint : MonoBehaviour
                 {
                     for (int i = 0; i < num && i < hhintString.Length; i++)
                     {
-                        // ªÛ»£¿€øÎ «œ¡ˆ æ æ“∞Ì
-                        // ¿ÃπÃ Ω·¡Æ¿÷¥¬ πÆ±∏∞° æ∆¥—
+                        //   »£ €ø         æ“∞ 
+                        //  Ãπ       ÷¥          ∆¥ 
                         if (!(objectName.ContainsKey(i)))
                             hintText.text += hhintString[i] + "\n";
                     }
@@ -236,3 +245,5 @@ public class makeHint : MonoBehaviour
         house.Add("deeppan", 5);
     }
 }
+
+
