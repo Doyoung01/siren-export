@@ -4,20 +4,19 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 
 public class modifyTextMeshPro : MonoBehaviour
 {
     public GameObject prefab;
     public Transform parent;
 
-    public enum Language { English, Korean }
-    public Language currentLanguage = Language.Korean;  // 기본값은 한국어로 설정
-
     public int[] canvasNumber;
     public Vector3[] flocation = { new Vector3(1.687f, 2.15f, -0.306f), new Vector3(-6.76f, 2f, -7.6f),
-        new Vector3(4.217f, 2.15f,-10.426f), new Vector3(-7.85f, 2.5f, -2.25f),  new Vector3(4f, 2.5f, 14.45f),
+        new Vector3(4.217f, 2.15f, -10.426f), new Vector3(-7.85f, 2.5f, -2.25f), new Vector3(4f, 2.5f, 14.45f),
         new Vector3(-9.14f, 2.5f, 13.06f), new Vector3(-1.91f, 2.3f, 0.24f), new Vector3(-8.08f, 2.15f, 4.462f),
-        new Vector3(5.21f, 2.15f, 11.66f), new Vector3(-10.95f, 2.15f, 7.16f)};
+        new Vector3(5.21f, 2.15f, 11.66f), new Vector3(-10.95f, 2.15f, 7.16f) };
     public Vector3[] rlocation = { };
     public Vector3[] hlocation = { };
 
@@ -35,80 +34,149 @@ public class modifyTextMeshPro : MonoBehaviour
     [SerializeField] private TMP_Text content1;
     [SerializeField] private TMP_Text content2;
 
+    private int localeIndex; // 언어 인덱스
 
-    // 공장 장면 텍스트 - 영어
-    public string[] ftitleList
-{
-    get
+    void Start()
     {
-        return currentLanguage == Language.English ? ftitleList_en : ftitleList_kr;
-    }
-}
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 
-public string[] fcontentList1
-{
-    get
+        localeIndex = GetLocaleIndex(); // 초기 로케일 인덱스 설정
+        LocalizationSettings.SelectedLocaleChanged += OnLocaleChanged; // 언어 변경 이벤트 추가
+
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+            factoryObjectNames();
+        else if (SceneManager.GetActiveScene().buildIndex == 3)
+            restaurantObjectNames();
+        else if (SceneManager.GetActiveScene().buildIndex == 4)
+            houseObjectNames();
+    }
+
+    void Update()
     {
-        return currentLanguage == Language.English ? fcontentList1_en : fcontentList1_kr;
+        t += Time.deltaTime;
+        if (t >= 1 && !loop)
+        {
+            bool clear = gm.getIsclear();
+            if (clear && SceneManager.GetActiveScene().buildIndex == 2)
+            {
+                for (int j = 0; j < canvasNumber.Length; j++)
+                {
+                    fmakeInstance(canvasNumber[j] - 1, j);
+                }
+                loop = true;
+                active = true;
+            }
+            else if (clear && SceneManager.GetActiveScene().buildIndex == 3)
+            {
+                for (int j = 0; j < canvasNumber.Length; j++)
+                {
+                    rmakeInstance(canvasNumber[j] - 1, j);
+                }
+                loop = true;
+                active = true;
+            }
+            else if (clear && SceneManager.GetActiveScene().buildIndex == 4)
+            {
+                for (int j = 0; j < canvasNumber.Length; j++)
+                {
+                    hmakeInstance(canvasNumber[j] - 1, j);
+                }
+                loop = true;
+                active = true;
+            }
+            t = 0;
+        }
     }
-}
 
-public string[] fcontentList2
-{
-    get
+    private void fmakeInstance(int i, int j)
     {
-        return currentLanguage == Language.English ? fcontentList2_en : fcontentList2_kr;
-    }
-}
+        GameObject myInstance = Instantiate(prefab, parent, false);
+        myInstance.transform.position = flocation[j];
+        myInstance.transform.rotation = Quaternion.Euler(0, frotation[j], 0);
 
-public string[] rtitleList
-{
-    get
+        Button clonedBtn = Instantiate(btn, myInstance.transform);
+        clonedBtn.GetComponentInChildren<TMP_Text>().text = "OK";
+        clonedBtn.onClick.AddListener(() => Destroy(myInstance));
+
+        title = myInstance.transform.Find("TitleText").gameObject.GetComponent<TMP_Text>();
+        content1 = myInstance.transform.Find("ContentText1").gameObject.GetComponent<TMP_Text>();
+        content2 = myInstance.transform.Find("ContentText2").gameObject.GetComponent<TMP_Text>();
+
+        title.text = localeIndex == 0 ? ftitleList_kr[i] : ftitleList_en[i];
+        content1.text = localeIndex == 0 ? fcontentList1_kr[i] : fcontentList1_en[i];
+        content2.text = localeIndex == 0 ? fcontentList2_kr[i] : fcontentList2_en[i];
+    }
+
+    private void rmakeInstance(int i, int j)
     {
-        return currentLanguage == Language.English ? rtitleList_en : rtitleList_kr;
-    }
-}
+        GameObject myInstance = Instantiate(prefab, parent, true);
+        myInstance.transform.position = rlocation[j];
+        myInstance.transform.rotation = Quaternion.Euler(0, rrotation[j], 0);
 
-public string[] rcontentList1
-{
-    get
+        Button clonedBtn = Instantiate(btn, myInstance.transform);
+        clonedBtn.GetComponentInChildren<TMP_Text>().text = "OK";
+        clonedBtn.onClick.AddListener(() => Destroy(myInstance));
+
+        title = myInstance.transform.Find("TitleText").gameObject.GetComponent<TMP_Text>();
+        content1 = myInstance.transform.Find("ContentText1").gameObject.GetComponent<TMP_Text>();
+        content2 = myInstance.transform.Find("ContentText2").gameObject.GetComponent<TMP_Text>();
+
+        title.text = localeIndex == 0 ? rtitleList_kr[i] : rtitleList_en[i];
+        content1.text = localeIndex == 0 ? rcontentList1_kr[i] : rcontentList1_en[i];
+        content2.text = localeIndex == 0 ? rcontentList2_kr[i] : rcontentList2_en[i];
+    }
+
+    private void hmakeInstance(int i, int j)
     {
-        return currentLanguage == Language.English ? rcontentList1_en : rcontentList1_kr;
-    }
-}
+        GameObject myInstance = Instantiate(prefab, parent, true);
+        myInstance.transform.position = hlocation[j];
+        myInstance.transform.rotation = Quaternion.Euler(0, hrotation[j], 0);
 
-public string[] rcontentList2
-{
-    get
+        Button clonedBtn = Instantiate(btn, myInstance.transform);
+        clonedBtn.GetComponentInChildren<TMP_Text>().text = "OK";
+        clonedBtn.onClick.AddListener(() => Destroy(myInstance));
+
+        title = myInstance.transform.Find("TitleText").gameObject.GetComponent<TMP_Text>();
+        content1 = myInstance.transform.Find("ContentText1").gameObject.GetComponent<TMP_Text>();
+        content2 = myInstance.transform.Find("ContentText2").gameObject.GetComponent<TMP_Text>();
+
+        title.text = localeIndex == 0 ? htitleList_kr[i] : htitleList_en[i];
+        content1.text = localeIndex == 0 ? hcontentList1_kr[i] : hcontentList1_en[i];
+        content2.text = localeIndex == 0 ? hcontentList2_kr[i] : hcontentList2_en[i];
+    }
+
+    private int GetLocaleIndex()
     {
-        return currentLanguage == Language.English ? rcontentList2_en : rcontentList2_kr;
+        string localeCode = LocalizationSettings.SelectedLocale.Identifier.Code;
+        return localeCode == "ko" ? 0 : 1; // 0: 한국어, 1: 영어
     }
-}
 
-public string[] htitleList
-{
-    get
+    private void OnLocaleChanged(Locale locale)
     {
-        return currentLanguage == Language.English ? htitleList_en : htitleList_kr;
+        localeIndex = GetLocaleIndex();
     }
-}
 
-public string[] hcontentList1
-{
-    get
+    public int countChildren()
     {
-        return currentLanguage == Language.English ? hcontentList1_en : hcontentList1_kr;
+        return parent.transform.childCount;
     }
-}
 
-public string[] hcontentList2
-{
-    get
+    public bool activeCanvases()
     {
-        return currentLanguage == Language.English ? hcontentList2_en : hcontentList2_kr;
+        return active;
     }
-}
 
+    public string[] ftitleList => localeIndex == 0 ? ftitleList_kr : ftitleList_en;
+    public string[] fcontentList1 => localeIndex == 0 ? fcontentList1_kr : fcontentList1_en;
+    public string[] fcontentList2 => localeIndex == 0 ? fcontentList2_kr : fcontentList2_en;
+
+    public string[] rtitleList => localeIndex == 0 ? rtitleList_kr : rtitleList_en;
+    public string[] rcontentList1 => localeIndex == 0 ? rcontentList1_kr : rcontentList1_en;
+    public string[] rcontentList2 => localeIndex == 0 ? rcontentList2_kr : rcontentList2_en;
+
+    public string[] htitleList => localeIndex == 0 ? htitleList_kr : htitleList_en;
+    public string[] hcontentList1 => localeIndex == 0 ? hcontentList1_kr : hcontentList1_en;
+    public string[] hcontentList2 => localeIndex == 0 ? hcontentList2_kr : hcontentList2_en;
 
 public string[] ftitleList_en = {
     "When working with a welding machine",
@@ -270,142 +338,7 @@ public string[] hcontentList2_kr = {
     "사용 후에는 헤어드라이어를 반드시 끄고 전원 코드를 뽑는 것이 좋습니다. 또한, 흡입구에 이물질이나 먼지가 없는지 주의하고, 습기가 많은 곳에 보관하지 않도록 하세요.",
     "먼지와 빵 부스러기를 주기적으로 청소하고, 사용 후에는 플러그를 뽑아 두는 것이 좋습니다. 또한, 금속 물질을 삽입하지 말고, 토스터기에는 버터를 발라 사용하지 마세요."
 };
-
-    // Start is called before the first frame update
- void Start()
-    {
-        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
-    }
-
-    void Update()
-    {
-        t += Time.deltaTime;
-        if (t >= 1 && loop == false)
-        {
-            bool clear = gm.getIsclear();
-            if (clear && SceneManager.GetActiveScene().buildIndex == 2)
-            {
-                for (int j = 0; j < canvasNumber.Length; j++)
-                {
-                    fmakeInstance(canvasNumber[j] - 1, j);
-                }
-                loop = true;
-                active = true;
-            }
-            else if (clear && SceneManager.GetActiveScene().buildIndex == 3)
-            {
-                for (int j = 0; j < canvasNumber.Length; j++)
-                {
-                    rmakeInstance(canvasNumber[j] - 1, j);
-                }
-                loop = true;
-                active = true;
-            }
-            else if (clear && SceneManager.GetActiveScene().buildIndex == 4)
-            {
-                for (int j = 0; j < canvasNumber.Length; j++)
-                {
-                    hmakeInstance(canvasNumber[j] - 1, j);
-                }
-                loop = true;
-                active = true;
-            }
-            t = 0;
-        }
-    }
-
-    private void fmakeInstance(int i, int j)
-    {
-        GameObject myInstance = Instantiate(prefab, parent, false);
-        myInstance.transform.position = flocation[j];
-        myInstance.transform.rotation = Quaternion.Euler(0, frotation[j], 0);
-
-        Button clonedBtn = Instantiate(btn, myInstance.transform);
-        clonedBtn.GetComponentInChildren<TMP_Text>().text = "OK";
-        clonedBtn.onClick.AddListener(() => Destroy(myInstance));
-
-        this.title = myInstance.transform.Find("TitleText").gameObject.GetComponent<TMP_Text>();
-        this.content1 = myInstance.transform.Find("ContentText1").gameObject.GetComponent<TMP_Text>();
-        this.content2 = myInstance.transform.Find("ContentText2").gameObject.GetComponent<TMP_Text>();
-
-        // 현재 언어에 따라 텍스트 설정
-        if (currentLanguage == Language.English)
-        {
-            this.title.text = ftitleList_en[i];
-            this.content1.text = fcontentList1_en[i];
-            this.content2.text = fcontentList2_en[i];
-        }
-        else if (currentLanguage == Language.Korean)
-        {
-            this.title.text = ftitleList_kr[i];
-            this.content1.text = fcontentList1_kr[i];
-            this.content2.text = fcontentList2_kr[i];
-        }
-    }
-
-    private void rmakeInstance(int i, int j)
-    {
-        GameObject myInstance = Instantiate(prefab, parent, true);
-        myInstance.transform.position = parent.position + rlocation[j];
-        myInstance.transform.rotation = Quaternion.Euler(0, rrotation[j], 0);
-
-        Button clonedBtn = Instantiate(btn, myInstance.transform);
-        clonedBtn.GetComponentInChildren<TMP_Text>().text = "OK";
-        clonedBtn.onClick.AddListener(() => Destroy(myInstance));
-
-        this.title = myInstance.transform.Find("TitleText").gameObject.GetComponent<TMP_Text>();
-        this.content1 = myInstance.transform.Find("ContentText1").gameObject.GetComponent<TMP_Text>();
-        this.content2 = myInstance.transform.Find("ContentText2").gameObject.GetComponent<TMP_Text>();
-
-        if (currentLanguage == Language.English)
-        {
-            this.title.text = rtitleList_en[i];
-            this.content1.text = rcontentList1_en[i];
-            this.content2.text = rcontentList2_en[i];
-        }
-        else if (currentLanguage == Language.Korean)
-        {
-            this.title.text = rtitleList_kr[i];
-            this.content1.text = rcontentList1_kr[i];
-            this.content2.text = rcontentList2_kr[i];
-        }
-    }
-
-    private void hmakeInstance(int i, int j)
-    {
-        GameObject myInstance = Instantiate(prefab, parent, true);
-        myInstance.transform.position = parent.position + hlocation[j];
-        myInstance.transform.rotation = Quaternion.Euler(0, hrotation[j], 0);
-
-        Button clonedBtn = Instantiate(btn, myInstance.transform);
-        clonedBtn.GetComponentInChildren<TMP_Text>().text = "OK";
-        clonedBtn.onClick.AddListener(() => Destroy(myInstance));
-
-        this.title = myInstance.transform.Find("TitleText").gameObject.GetComponent<TMP_Text>();
-        this.content1 = myInstance.transform.Find("ContentText1").gameObject.GetComponent<TMP_Text>();
-        this.content2 = myInstance.transform.Find("ContentText2").gameObject.GetComponent<TMP_Text>();
-
-        if (currentLanguage == Language.English)
-        {
-            this.title.text = htitleList_en[i];
-            this.content1.text = hcontentList1_en[i];
-            this.content2.text = hcontentList2_en[i];
-        }
-        else if (currentLanguage == Language.Korean)
-        {
-            this.title.text = htitleList_kr[i];
-            this.content1.text = hcontentList1_kr[i];
-            this.content2.text = hcontentList2_kr[i];
-        }
-    }
-
-    public int countChildren()
-    {
-        return parent.transform.childCount;
-    }
-
-    public bool activeCanvases()
-    {
-        return active;
-    }
+    private void factoryObjectNames() { /*...*/ }
+    private void restaurantObjectNames() { /*...*/ }
+    private void houseObjectNames() { /*...*/ }
 }

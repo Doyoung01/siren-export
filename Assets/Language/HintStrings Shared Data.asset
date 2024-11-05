@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: HintStrings Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: HintStrings
+  m_TableCollectionNameGuidString: 308d3ea069b51f24d874666acf10665f
+  m_Entries:
+  - m_Id: 49252823040
+    m_Key: factory_hint_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 380187602944
+    m_Key: factory_hint_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 385183019008
+    m_Key: factory_hint_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 387766710272
+    m_Key: factory_hint_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 389742227456
+    m_Key: factory_hint_5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 392158146560
+    m_Key: factory_hint_6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 394590842880
+    m_Key: factory_hint_7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397497495552
+    m_Key: restaurant_hint_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 402128007168
+    m_Key: restaurant_hint_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 405319872512
+    m_Key: restaurant_hint_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 796845568000
+    m_Key: restaurant_hint_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 798489735168
+    m_Key: restaurant_hint_5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 799160823808
+    m_Key: restaurant_hint_6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800041627648
+    m_Key: house_hint_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 802243637248
+    m_Key: house_hint_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 940135575552
+    m_Key: house_hint_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 940928299008
+    m_Key: house_hint_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 942136258560
+    m_Key: house_hint_5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 943281303552
+    m_Key: house_hint_6
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 6719997488049946654
+  references:
+    version: 2
+    RefIds:
+    - rid: 6719997488049946654
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables,
+        asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1730826271183

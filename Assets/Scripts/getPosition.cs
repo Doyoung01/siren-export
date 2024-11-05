@@ -1,7 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
+using TMPro;
 
 public class getPosition : MonoBehaviour
 {
@@ -13,39 +12,64 @@ public class getPosition : MonoBehaviour
     public RectTransform bottom;
 
     public TMP_Text contentText;
+
+    // 동적 캔버스의 기본값 변수
+    private float originHeight = 0;
+    private int lineCount = 0;
+
     public RectTransform content;
 
-    private float initialHeight;
+    private Vector2 leftbarInitialSize;
+    private Vector2 rightbarInitialSize;
+    private Vector2 panelInitialSize;
+
+    private static float gap;
 
     void Start()
     {
-        // 초기 content 높이를 저장
-        initialHeight = content.rect.height;
+        // 초기값 설정
+        leftbarInitialSize = leftbar.sizeDelta;
+        rightbarInitialSize = rightbar.sizeDelta;
+        panelInitialSize = panel.sizeDelta;
+
+        // 시작 시 원래의 content 높이 저장
+        originHeight = content.rect.height;
+        lineCount = CountLines(contentText.text, "\n") + 1;
     }
 
     void Update()
     {
-        // 현재 content 높이를 가져와서 초기 높이와 비교
+        // 현재 content 높이 확인
         float currentHeight = content.rect.height;
-        float heightDifference = currentHeight - initialHeight;
 
-        if (Mathf.Abs(heightDifference) > 0.01f)
+        // 텍스트 줄 수와 높이 차이(gap) 계산
+        lineCount = CountLines(contentText.text, "\n");
+        gap = (currentHeight - originHeight) / 2;
+
+        // 높이에 변화가 있을 때만 업데이트 수행
+        if (Mathf.Abs(gap) > 0.1f) // gap이 일정 값 이상일 때만 업데이트
         {
-            AdjustUIElements(heightDifference);
-            initialHeight = currentHeight;  // 초기 높이를 업데이트하여 무한 업데이트 방지
+            // 각 요소의 높이 조정
+            leftbar.sizeDelta = new Vector2(leftbarInitialSize.x, leftbarInitialSize.y + gap);
+            rightbar.sizeDelta = new Vector2(rightbarInitialSize.x, rightbarInitialSize.y + gap);
+            panel.sizeDelta = new Vector2(panelInitialSize.x, panelInitialSize.y + gap);
+
+            // top과 bottom의 위치 조정
+            top.localPosition += new Vector3(0, gap, 0);
+            bottom.localPosition += new Vector3(0, -gap, 0);
+
+            // originHeight를 현재 높이로 업데이트
+            originHeight = currentHeight;
+
+            Debug.Log("Line count: " + lineCount + ", Gap: " + gap + ", Total height adjustment: " + gap * lineCount);
         }
     }
 
-    private void AdjustUIElements(float heightDifference)
+    // contentText.text의 줄 수를 세는 메서드
+    private int CountLines(string text, string delimiter)
     {
-        // leftbar, rightbar, panel의 높이를 높이 차이에 맞게 업데이트
-        leftbar.sizeDelta = new Vector2(leftbar.sizeDelta.x, leftbar.sizeDelta.y + heightDifference);
-        rightbar.sizeDelta = new Vector2(rightbar.sizeDelta.x, rightbar.sizeDelta.y + heightDifference);
-        panel.sizeDelta = new Vector2(panel.sizeDelta.x, panel.sizeDelta.y + heightDifference);
-
-        // top과 bottom의 위치를 높이 차이에 맞게 업데이트
-        top.localPosition += new Vector3(0, heightDifference / 2, 0);
-        bottom.localPosition += new Vector3(0, -heightDifference / 2, 0);
+        string[] lines = text.Split(new string[] { delimiter }, System.StringSplitOptions.None);
+        return lines.Length - 1;
     }
 }
 

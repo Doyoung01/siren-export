@@ -17,6 +17,12 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: c0024e81384b1324d949ea61c4bc930e
   m_SerializeEntries:
+  - m_GUID: 2601d8bdfabc0b040ac0160a794fc355
+    m_Address: HintStrings_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2b2db57c84d04b74ea163ccfe9a89bc3
     m_Address: Restaurant_en
     m_ReadOnly: 1

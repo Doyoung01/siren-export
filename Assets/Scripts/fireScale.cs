@@ -12,7 +12,7 @@ public class fireScale : MonoBehaviour
     [SerializeField, Range(0f, 1f)] private float currentIntensity = 0.1f; // 초기 강도를 낮게 설정
     private float startIntensity = 0f;
 
-    [SerializeField] private ParticleSystem firePS = null;
+    [SerializeField] private ParticleSystem firePS;
 
     private float time = 0f;
     [SerializeField] private float spreadSpeed = 0.001f; // 불 번지는 속도

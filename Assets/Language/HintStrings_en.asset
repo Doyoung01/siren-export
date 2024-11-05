@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: HintStrings_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 308d3ea069b51f24d874666acf10665f, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 49252823040
+    m_Localized: Oops! It seems like there's smoke coming from somewhere... In the
+      factory?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 380187602944
+    m_Localized: Hmm, is that fire extinguisher working?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 385183019008
+    m_Localized: Careful! That machine looks really hot...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 387766710272
+    m_Localized: Did you turn off the gas? Something seems like it's leaking...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 389742227456
+    m_Localized: Oh no! Is that cigarette smoldering?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 392158146560
+    m_Localized: Is there any paper near the flames?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 394590842880
+    m_Localized: Are there any flammable objects near the fire?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 397497495552
+    m_Localized: Where did I put the towel..?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 402128007168
+    m_Localized: Where is that smell of oil coming from..?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 405319872512
+    m_Localized: Why does it smell like rotten eggs..?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 796845568000
+    m_Localized: It's too cold in the store.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 798489735168
+    m_Localized: Is there something wrong with the fire extinguisher..?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 799160823808
+    m_Localized: There's oil dripping from the hood...!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800041627648
+    m_Localized: Is there a burning smell coming from somewhere..?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 802243637248
+    m_Localized: It still smells like something is burning..!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 940135575552
+    m_Localized: Did I turn off the outlet before leaving?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 940928299008
+    m_Localized: There's still a smell of cigarettes in the kitchen.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 942136258560
+    m_Localized: What is that sound coming from the bathroom..?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 943281303552
+    m_Localized: Did I turn off the electric pad when I got out of bed this morning..?
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
