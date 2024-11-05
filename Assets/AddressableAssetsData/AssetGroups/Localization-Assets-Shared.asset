@@ -17,6 +17,11 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 8b5aadc6d5775604f8e6ff1fda75f582
   m_SerializeEntries:
+  - m_GUID: 21041dbeab0031c499a031170dfc0c42
+    m_Address: Assets/Language/Restaurant Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6e7c2e72cfd52264ba1191501389d44c
     m_Address: Assets/Language/House Shared Data.asset
     m_ReadOnly: 1

@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Restaurant_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 21041dbeab0031c499a031170dfc0c42, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 552187621376
+    m_Localized: Combustible materials near a gas flame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 911069048832
+    m_Localized: "\n Placing flammable materials near a gas flame can cause a fire
+      to spread.\r\n\n Keep flammable materials (materials that can catch fire) away
+      from the gas stove."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1725514805248
+    m_Localized: Not turning off the power after using the fryer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1958776827904
+    m_Localized: "\n If the fryer is continuously turned on, the fryer and oil may
+      overheat and cause a fire.\r\n\n When there is no food to cook, turn off the
+      power to lower the temperature of the fryer and oil.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2323022770176
+    m_Localized: Gas leak in gas pipeline
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2507937050624
+    m_Localized: "\nThere is a gas leak.\n\n\n Conduct regular inspections of gas
+      pipelines and connections, stoves. Additionally, safety valves or automatic
+      shut-off systems can be installed in gas pipelines to automatically shut off
+      the gas supply when a leak is detected."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2892835745792
+    m_Localized: Long-term use of air conditioner
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3045411942400
+    m_Localized: " \nThe air conditioner overheated due to prolonged use.\r\n\n\n
+      Excessive use of air conditioners can cause electrical sparks in the cord,
+      and condenser(outdoor units) can can also overheat. Regularly inspect the air
+      conditioner's wiring for any issues, and avoid overheating by frequently turning
+      off the air conditioner."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3422865747968
+    m_Localized: Problems using regular fire extinguishers
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807424704512
+    m_Localized: "\n Fire safety standards require restaurants to have Class K fire
+      extinguishers.\r\n\n Kitchens up to 25m\xB2 should be equipped with a class
+      K fire extinguisher, while those larger than 25m\xB2 require both a class K
+      and a powder fire extinguisher. Additionally, it is necessary to regularly
+      check the fire extinguisher's pressure gauge."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4142557982720
+    m_Localized: Grease stains on the kitchen hood
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4485215842304
+    m_Localized: "\n Fire may spread due to grease stains accumulated in the hood
+      from cooking food.\r\n\n Filters in the hood should be cleaned regularly to
+      prevent grease accumulation. To clean the filter, first turn off the hood and
+      remove the filter. Then, clean it with a neutral detergent, rinse, and dry
+      thoroughly."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6662793621504
+    m_Localized: Eating out at a restaurant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6755500322816
+    m_Localized: "\"I'm so tired...\" You finished a hard day today.\r\n  - On days
+      like this, I need a reward!\r\n   You made a big decision to eat out this evening.\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7187442331648
+    m_Localized: " Entering the restaurant, the people are crowded and the staff
+      look busy.\r\n  - Wait a minute... I smell something burning somewhere!\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7207897952256
+    m_Localized: ' Find and clear away 6 fire hazards!'
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Restaurant Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Restaurant
+  m_TableCollectionNameGuidString: 21041dbeab0031c499a031170dfc0c42
+  m_Entries:
+  - m_Id: 552187621376
+    m_Key: Combustible materials near a gas flame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 911069048832
+    m_Key: Combustible materials contents
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1725514805248
+    m_Key: Not turning off the power after using the fryer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1958776827904
+    m_Key: fryer contents
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2323022770176
+    m_Key: Gas leak in gas pipeline
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2507937050624
+    m_Key: Gas leak contents
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2892835745792
+    m_Key: Long-term use of air conditioner
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3045411942400
+    m_Key: air conditioner contents
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3422865747968
+    m_Key: Problems using regular fire extinguishers
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3807424704512
+    m_Key: regular fire extinguishers contents
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4142557982720
+    m_Key: Grease stains on the kitchen hood
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4485215842304
+    m_Key: kitchen hood contents
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6662793621504
+    m_Key: Eating out at a restaurant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6755500322816
+    m_Key: restaurant story1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7187442331648
+    m_Key: restaurant story2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7207897952256
+    m_Key: restaurant story3
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 6719997488049946643
+  references:
+    version: 2
+    RefIds:
+    - rid: 6719997488049946643
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables,
+        asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1730809758599
