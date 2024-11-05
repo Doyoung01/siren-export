@@ -15,10 +15,6 @@ MonoBehaviour:
   m_TableCollectionName: MainMenu
   m_TableCollectionNameGuidString: d5e40e9b5faa383408302147de8b6c34
   m_Entries:
-  - m_Id: 10937856000
-    m_Key: New Entry
-    m_Metadata:
-      m_Items: []
   - m_Id: 105901092864
     m_Key: Start
     m_Metadata:
@@ -41,6 +37,26 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 561289261056
     m_Key: Ko
+    m_Metadata:
+      m_Items: []
+  - m_Id: 668705875980288
+    m_Key: Turn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 668710334525440
+    m_Key: Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 668712180019200
+    m_Key: Validate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 668991889764352
+    m_Key: About contents
+    m_Metadata:
+      m_Items: []
+  - m_Id: 670919206006784
+    m_Key: Snap
     m_Metadata:
       m_Items: []
   m_Metadata:
