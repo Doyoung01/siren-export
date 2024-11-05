@@ -24111,8 +24111,11 @@ CanvasRenderer:
   m_GameObject: {fileID: 588149483}
   m_CullTransparentMesh: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!114 &588149487
 =======
+=======
+>>>>>>> main
 --- !u!1 &590552194
 GameObject:
   m_ObjectHideFlags: 0
@@ -24148,12 +24151,16 @@ Transform:
   m_Father: {fileID: 956708322}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &590552196
+<<<<<<< HEAD
+>>>>>>> main
+=======
 >>>>>>> main
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
   m_GameObject: {fileID: 588149483}
   m_Enabled: 1
@@ -24190,6 +24197,8 @@ MonoBehaviour:
     version: 2
     RefIds: []
 =======
+=======
+>>>>>>> main
   m_GameObject: {fileID: 590552194}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -24208,6 +24217,9 @@ MonoBehaviour:
     m_HintWeight: 1
     m_MaintainTargetPositionOffset: 0
     m_MaintainTargetRotationOffset: 0
+<<<<<<< HEAD
+>>>>>>> main
+=======
 >>>>>>> main
 --- !u!1001 &590683766
 PrefabInstance:
@@ -44244,8 +44256,13 @@ CanvasRenderer:
   m_GameObject: {fileID: 1083944498}
   m_CullTransparentMesh: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!114 &1083944502
 MonoBehaviour:
+=======
+--- !u!1 &1090163283
+GameObject:
+>>>>>>> main
 =======
 --- !u!1 &1090163283
 GameObject:
@@ -44254,6 +44271,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
   m_GameObject: {fileID: 1083944498}
   m_Enabled: 1
@@ -44290,6 +44308,8 @@ GameObject:
     version: 2
     RefIds: []
 =======
+=======
+>>>>>>> main
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1090163284}
@@ -44367,6 +44387,9 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1090163283}
   m_Mesh: {fileID: -2014588322676101042, guid: 11cd62256b1d470f922b2c8e6446cc77, type: 3}
+<<<<<<< HEAD
+>>>>>>> main
+=======
 >>>>>>> main
 --- !u!1001 &1092885620
 PrefabInstance:
