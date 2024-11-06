@@ -24,8 +24,8 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 911069048832
     m_Localized: "\n Placing flammable materials near a gas flame can cause a fire
-      to spread.\r\n\n Keep flammable materials (materials that can catch fire) away
-      from the gas stove."
+      to spread.\r\n\n\n Keep flammable materials (materials that can catch fire)
+      away from the gas stove."
     m_Metadata:
       m_Items: []
   - m_Id: 1725514805248
@@ -34,8 +34,8 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 1958776827904
     m_Localized: "\n If the fryer is continuously turned on, the fryer and oil may
-      overheat and cause a fire.\r\n\n When there is no food to cook, turn off the
-      power to lower the temperature of the fryer and oil.\r"
+      overheat and cause a fire.\r\n\n\n When there is no food to cook, turn off
+      the power to lower the temperature of the fryer and oil.\r"
     m_Metadata:
       m_Items: []
   - m_Id: 2323022770176
@@ -67,7 +67,7 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 3807424704512
     m_Localized: "\n Fire safety standards require restaurants to have Class K fire
-      extinguishers.\r\n\n Kitchens up to 25m\xB2 should be equipped with a class
+      extinguishers.\r\n\n\n Kitchens up to 25m\xB2 should be equipped with a class
       K fire extinguisher, while those larger than 25m\xB2 require both a class K
       and a powder fire extinguisher. Additionally, it is necessary to regularly
       check the fire extinguisher's pressure gauge."
@@ -79,10 +79,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 4485215842304
     m_Localized: "\n Fire may spread due to grease stains accumulated in the hood
-      from cooking food.\r\n\n Filters in the hood should be cleaned regularly to
-      prevent grease accumulation. To clean the filter, first turn off the hood and
-      remove the filter. Then, clean it with a neutral detergent, rinse, and dry
-      thoroughly."
+      from cooking food.\r\n\n\n Filters in the hood should be cleaned regularly
+      to prevent grease accumulation. To clean the filter, first turn off the hood
+      and remove the filter. Then, clean it with a neutral detergent, rinse, and
+      dry thoroughly."
     m_Metadata:
       m_Items: []
   - m_Id: 6662793621504

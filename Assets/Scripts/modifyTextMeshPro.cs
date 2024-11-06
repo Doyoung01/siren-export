@@ -179,22 +179,22 @@ public class modifyTextMeshPro : MonoBehaviour
     public string[] hcontentList2 => localeIndex == 0 ? hcontentList2_kr : hcontentList2_en;
 
 public string[] ftitleList_en = {
-    "When working with a welding machine",
-    "Smoking",
-    "Where to store combustible materials in a fire-use area",
-    "Overheating of the machine",
-    "Machine collision",
-    "Spark fire caused by dust",
-    "Obstacles around the extinguisher"
+    "When working with a welding machine\n",
+    "Smoking\n",
+    "Where to store combustible materials in a fire-use area\n",
+    "Overheating of the machine\n",
+    "Machine collision\n",
+    "Spark fire caused by dust\n",
+    "Obstacles around the extinguisher\n"
 };
 public string[] fcontentList1_en = {
-    "Yesterday's welding fire was alive.",
-    "A lit cigarette was touched on a coat, which is a combustible material.",
-    "A welding spark came into contact with unprotected combustible material and ignited.",
-    "The machine has been running for a long time, causing the motor and engine to become too hot.",
-    "A worker operated the machines incorrectly and they collided with each other.",
-    "A welding spark met with dust in the air and exploded.",
-    "There were too many boxes around the fire extinguisher to put out the embers quickly."
+    "Yesterday's welding fire was alive.\n",
+    "A lit cigarette was touched on a coat, which is a combustible material.\n",
+    "A welding spark came into contact with unprotected combustible material and ignited.\n",
+    "The machine has been running for a long time, causing the motor and engine to become too hot.\n",
+    "A worker operated the machines incorrectly and they collided with each other.\n",
+    "A welding spark met with dust in the air and exploded.\n",
+    "There were too many boxes around the fire extinguisher to put out the embers quickly.\n"
 };
 public string[] fcontentList2_en = {
     "Check the site after work. Keep a fire extinguisher nearby.",
@@ -263,28 +263,28 @@ public string[] rcontentList2_en = {
 
 // Restaurant Canvas - 한국어
 public string[] rtitleList_kr = {
-    "가스 불 근처의 가연성 물질",
-    "프라이어 사용 후 전원을 끄지 않음",
-    "가스 배관의 가스 누출",
-    "에어컨 장시간 사용",
-    "일반 소화기 사용 문제",
-    "주방 후드의 기름때"
+    "가스 불 근처의 가연성 물질\n",
+    "프라이어 사용 후 전원을 끄지 않음\n",
+    "가스 배관의 가스 누출\n",
+    "에어컨 장시간 사용\n",
+    "일반 소화기 사용 문제\n",
+    "주방 후드의 기름때\n"
 };
 public string[] rcontentList1_kr = {
-    "가스 불 가까이에 가연성 물질을 놓으면 화재가 번질 수 있습니다.",
-    "프라이어가 계속 켜져 있으면 프라이어와 기름이 과열되어 화재가 발생할 수 있습니다.",
-    "가스가 누출되고 있습니다.",
-    "장시간 사용으로 에어컨이 과열되었습니다.",
-    "화재 안전 기준에 따라 식당은 K급 소화기를 비치해야 합니다.",
-    "음식을 조리하면서 후드에 쌓인 기름때로 인해 화재가 확산될 수 있습니다."
+    "가스 불 가까이에 가연성 물질을 놓으면 화재가 번질 수 있습니다\n.",
+    "프라이어가 계속 켜져 있으면 프라이어와 기름이 과열되어 화재가 발생할 수 있습니다.\n",
+    "가스가 누출되고 있습니다.\n",
+    "장시간 사용으로 에어컨이 과열되었습니다.\n",
+    "화재 안전 기준에 따라 식당은 K급 소화기를 비치해야 합니다.\n",
+    "음식을 조리하면서 후드에 쌓인 기름때로 인해 화재가 확산될 수 있습니다.\n"
 };
 public string[] rcontentList2_kr = {
-    "가연성 물질(불이 붙을 수 있는 물질)은 가스레인지에서 멀리 두세요.",
-    "조리할 음식이 없을 때는 전원을 꺼서 프라이어와 기름의 온도를 낮추세요.",
-    "가스 배관과 연결부, 가스레인지를 정기적으로 점검하세요. 또한, 가스 누출이 감지되면 자동으로 가스 공급을 차단하는 안전 밸브나 자동 차단 시스템을 가스 배관에 설치할 수 있습니다.",
-    "에어컨 과도한 사용은 전원 코드에 전기 스파크를 일으킬 수 있으며, 실외기 또한 과열될 수 있습니다. 에어컨 배선의 문제를 정기적으로 점검하고 자주 꺼서 과열을 방지하세요.",
-    "면적이 25m² 이하인 주방에는 K급 소화기를 비치하고, 25m²를 초과하는 주방에는 K급 소화기와 함께 분말 소화기도 비치해야 합니다. 또한, 소화기의 압력 게이지를 정기적으로 점검하세요.",
-    "기름이 쌓이지 않도록 후드의 필터를 정기적으로 청소하세요. 필터를 청소하려면 먼저 후드를 끄고 필터를 분리한 뒤, 중성 세제로 닦고 깨끗이 헹군 후 완전히 건조시켜 다시 장착합니다."
+    "가연성 물질(불이 붙을 수 있는 물질)은 가스레인지에서 멀리 두세요.\n",
+    "조리할 음식이 없을 때는 전원을 꺼서 프라이어와 기름의 온도를 낮추세요.\n",
+    "가스 배관과 연결부, 가스레인지를 정기적으로 점검하세요. 또한, 가스 누출이 감지되면 자동으로 가스 공급을 차단하는 안전 밸브나 자동 차단 시스템을 가스 배관에 설치할 수 있습니다.\n",
+    "에어컨 과도한 사용은 전원 코드에 전기 스파크를 일으킬 수 있으며, 실외기 또한 과열될 수 있습니다. 에어컨 배선의 문제를 정기적으로 점검하고 자주 꺼서 과열을 방지하세요.\n",
+    "면적이 25m² 이하인 주방에는 K급 소화기를 비치하고, 25m²를 초과하는 주방에는 K급 소화기와 함께 분말 소화기도 비치해야 합니다. 또한, 소화기의 압력 게이지를 정기적으로 점검하세요.\n",
+    "기름이 쌓이지 않도록 후드의 필터를 정기적으로 청소하세요. 필터를 청소하려면 먼저 후드를 끄고 필터를 분리한 뒤, 중성 세제로 닦고 깨끗이 헹군 후 완전히 건조시켜 다시 장착합니다.\n"
 };
 
 // House Canvas - 영어
