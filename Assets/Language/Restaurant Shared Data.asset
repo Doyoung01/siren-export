@@ -79,6 +79,14 @@ MonoBehaviour:
     m_Key: restaurant story3
     m_Metadata:
       m_Items: []
+  - m_Id: 292930026893312
+    m_Key: Fire extinguished!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 293311779860480
+    m_Key: Finish
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

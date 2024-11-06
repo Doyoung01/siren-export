@@ -12,6 +12,8 @@ public class fireScale1 : MonoBehaviour
 
     [SerializeField, Range(0f, 1f)] private float currentIntensity = 0.1f; // 초기 강도를 낮게 설정
     private float startIntensity = 0f;
+    public float GetCurrentIntensity() => currentIntensity;
+
 
     [SerializeField] private ParticleSystem firePS;
 

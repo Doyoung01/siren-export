@@ -126,6 +126,14 @@ MonoBehaviour:
       \uC81C\uAC70\uD558\uC138\uC694!"
     m_Metadata:
       m_Items: []
+  - m_Id: 292930026893312
+    m_Localized: "\uBD88 \uC9C4\uC555 \uC644\uB8CC!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 293311779860480
+    m_Localized: "\uC644\uB8CC"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

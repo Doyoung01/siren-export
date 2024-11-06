@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
     public void OnClickStartButton()
     {
         PlayerPrefs.SetInt("Loop", 0);
-        time = 2f; // 제한 시간 설정
+        time = 200f; // 제한 시간 설정
         timeLimit = 0.0f;
         CoverImage.SetActive(false);
         isChecked = true;

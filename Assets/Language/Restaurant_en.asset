@@ -103,6 +103,14 @@ MonoBehaviour:
     m_Localized: ' Find and clear away 6 fire hazards!'
     m_Metadata:
       m_Items: []
+  - m_Id: 292930026893312
+    m_Localized: Fire extinguished!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 293311779860480
+    m_Localized: Finish
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
