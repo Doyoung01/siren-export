@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Clear Window")]
     public GameObject clear; // 클리어창
+    public GameObject Info;//각 인포창
     public GameObject totalInfo;
 
     [Header("Pause")]
@@ -80,6 +81,7 @@ public class GameManager : MonoBehaviour
         RestartButton.SetActive(false);
         fires.SetActive(false);
         clear.SetActive(false);
+        Info.SetActive(false);
         totalInfo.SetActive(false);
         pauseWindow.SetActive(false);
         canvases.SetActive(false);
@@ -90,7 +92,7 @@ public class GameManager : MonoBehaviour
     public void OnClickStartButton()
     {
         PlayerPrefs.SetInt("Loop", 0);
-        time = 1f; // 제한 시간 설정
+        time = 200f; // 제한 시간 설정
         timeLimit = 0.0f;
         CoverImage.SetActive(false);
         isChecked = true;
@@ -108,13 +110,14 @@ public class GameManager : MonoBehaviour
 
     private void volume()
     {
-        audio.volume = 0.01f;
+        audio.volume = 0.01f; // 초기 볼륨 설정
         audio.Play();
         while (sirenTime > sirenTimeLimit)
         {
-            audio.volume += 0.5f;
+            audio.volume += 0.1f; // 음량을 점진적으로 증가
             sirenTime -= 0.5f;
         }
+        audio.volume = 0.2f; // 최종 볼륨을 낮추는 부분 추가
     }
     public void OnclickInfoButton()
     {
@@ -133,7 +136,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("PlayCount", 0);
         SceneManager.LoadScene(1);
     }
-    
+
     private void speedUp(float spd)
     {
         audio.pitch = spd;
@@ -147,15 +150,17 @@ public class GameManager : MonoBehaviour
     {
         // Player.transform.position = new Vector3(0, 6, 0);
 
-        if (isChecked == true){
+        if (isChecked == true)
+        {
             var rightAButton = actionAsset.actionMaps[5].actions[0].ReadValue<float>();
-            
+
             if (rightAButton == 1)
             {
                 saveButton = 1;
-            } else
+            }
+            else
             {
-                if(isPause == true && pauseWindow.activeSelf == false)
+                if (isPause == true && pauseWindow.activeSelf == false)
                 {
                     saveButton = 0;
                 }
@@ -175,12 +180,14 @@ public class GameManager : MonoBehaviour
             }
 
 
-            if (!hasAppeared && isPause == false) {
+            if (!hasAppeared && isPause == false)
+            {
                 if (countScript.getCount() == countScript.getObcount())
                 {
                     isChecked = false;
                     isclear = true;
                     canvases.SetActive(true);
+                    Info.SetActive(true);
                     audio.Stop();
                     audio.clip = applause;
                     audio.Play();
@@ -217,16 +224,17 @@ public class GameManager : MonoBehaviour
                     time -= Time.deltaTime;
                     min = (int)time / 60;
                     sec = time % 60;
-                    timeText.text = "0:" +  (int)sec;
+                    timeText.text = "0:" + (int)sec;
                     timeText.color = Color.red;
                 }
-                if(time <= timeLimit)
+                if (time <= timeLimit)
                 {
-                    RestartButton.SetActive (true);
+                    RestartButton.SetActive(true);
                     hasAppeared = true;
                     fires.SetActive(true);
                     audio.Stop();
                     audio.clip = audioClip;
+                    audio.volume = 0.2f; // 여기서도 음량을 낮춤
                     audio.pitch = 0.7f;
                     volume();
                     PlayerPrefs.SetInt("PlayCount", ++gamePlay);

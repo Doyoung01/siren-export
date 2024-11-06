@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class IsClear : MonoBehaviour
 {
-    // All Info Canvas에 해당 스크립트를 추가할 것
     [Header("All Information Windows")]
-    public int infoWindows; // 모든 인포창 개수
-    private bool flag; // 모두 비활성화 됐는가?
+    public GameObject InformationCanvas_Restaurant; // 부모 오브젝트 (All Info Canvas)
+    public int infoWindows; // 비활성화되어야 하는 정보 창 개수
     private bool execute = false; // 스크립트가 한 번 실행되었는가?
 
     [Header("Clear Window")]
@@ -16,23 +15,35 @@ public class IsClear : MonoBehaviour
     private GameManager gm;
     private modifyTextMeshPro mtm;
 
-    // Start is called before the first frame update
     void Start()
     {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         mtm = GameObject.Find("GameManager").GetComponent<modifyTextMeshPro>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (gm.isActiveInfo())
+        // Step 1: InformationCanvas_Restaurant의 비활성화된 자식 오브젝트 수가 infoWindows와 같은지 확인
+        if (CountInactiveChildren() >= infoWindows && !execute)
         {
-            if (mtm.countChildren() == 0 && !execute && mtm.activeCanvases())
+            clear.SetActive(true); // 클리어 창 활성화
+            execute = true; // 스크립트가 한 번 실행되었음을 표시
+        }
+    }
+
+    // 비활성화된 자식 오브젝트의 개수를 세는 메서드
+    private int CountInactiveChildren()
+    {
+        int inactiveCount = 0;
+
+        foreach (Transform child in InformationCanvas_Restaurant.transform)
+        {
+            if (!child.gameObject.activeSelf) // 자식이 비활성화 상태일 경우
             {
-                clear.SetActive(true);
-                execute = true;
+                inactiveCount++;
             }
         }
+
+        return inactiveCount; // 비활성화된 자식 오브젝트 수 반환
     }
 }
