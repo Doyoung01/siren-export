@@ -179,6 +179,10 @@ MonoBehaviour:
       \uBC14\uB974\uC9C0 \uC54A\uB3C4\uB85D \uC8FC\uC758\uD574\uC57C \uD569\uB2C8\uB2E4."
     m_Metadata:
       m_Items: []
+  - m_Id: 191061132734464
+    m_Localized: "\uBD88 \uC9C4\uC555\uD558\uAE30"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

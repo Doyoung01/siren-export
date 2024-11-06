@@ -123,6 +123,10 @@ MonoBehaviour:
     m_Key: Toaster contents
     m_Metadata:
       m_Items: []
+  - m_Id: 191061132734464
+    m_Key: Extinguish the fire
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
