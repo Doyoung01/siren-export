@@ -2451,6 +2451,7 @@ MonoBehaviour:
   canvases: {fileID: 757821021}
   applause: {fileID: 8300000, guid: 19d3918c68e607648a6420d4310d3e21, type: 3}
   clear: {fileID: 1758864519}
+  Info: {fileID: 478688503}
   totalInfo: {fileID: 514896053}
   actionAsset: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
@@ -2674,7 +2675,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 2895877044324772967, guid: 7e4e2193995002843a86838bd4277882, type: 3}
   parent: {fileID: 757821023}
-  currentLanguage: 1
   canvasNumber: 010000000200000003000000040000000500000006000000
   flocation:
   - {x: 1.687, y: 2.15, z: -0.306}
@@ -19286,6 +19286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41123760b278efc47876875a4fdbd0f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InformationCanvas_Restaurant: {fileID: 478688503}
   infoWindows: 6
   clear: {fileID: 1758864519}
 --- !u!1001 &480065365
@@ -31329,6 +31330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41123760b278efc47876875a4fdbd0f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InformationCanvas_Restaurant: {fileID: 478688503}
   infoWindows: 6
   clear: {fileID: 1758864519}
 --- !u!4 &757821023
