@@ -52,7 +52,7 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 1273683406848
     m_Localized: "\nElectric floorboards were used with thick blankets for a long
-      time. This prevents heat from escaping and can cause fires due to high temperatures.\r\n\n\n
+      time. This prevents heat from escaping and can cause fires due to high temperatures.\r\n\n
       Avoid using electric floorboards, thick yarns, blankets, etc. together. Additionally,
       you must verify that the product is safety certified and unplug it if not in
       use.\r"
@@ -99,9 +99,9 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 4154188787712
     m_Localized: "\nFood left in the cooking. Long periods of gas fire use can lead
-      to fires.\r\n\n\n Do not leave food as much as possible while cooking. Make
-      sure the gas heat is turned off after cooking, and no additional combustible
-      substances are placed near the fire.\r\n"
+      to fires.\r\n\n Do not leave food as much as possible while cooking. Make sure
+      the gas heat is turned off after cooking, and no additional combustible substances
+      are placed near the fire.\r\n"
     m_Metadata:
       m_Items: []
   - m_Id: 4424629121024
@@ -110,7 +110,7 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 4568976093184
     m_Localized: "\nOverloaded with multi-tap octopus, resulting in fire. Excessive
-      current flow may cause a fire.\r\n\n   \nYou should refrain from using a multi-tap
+      current flow may cause a fire.\r\n\nYou should refrain from using a multi-tap
       octopus, and we recommend using a multi-tap with overload protection. It is
       also recommended that you refrain from using it if there is a problem with
       the wire cladding.\r"
@@ -123,8 +123,8 @@ MonoBehaviour:
   - m_Id: 5420147175424
     m_Localized: "\nThe fire started because the cigarette butts did not check the
       embers after smoking. It's one of the many accidents that occur due to carelessness
-      every year.\r\n\n\n Always check for embers before throwing away cigarette
-      butts after smoking, and never throw them near combustible substances. Additionally,
+      every year.\r\n\n Always check for embers before throwing away cigarette butts
+      after smoking, and never throw them near combustible substances. Additionally,
       you should be careful when discarding the ashtray as there may still be embers
       left.\r\n"
     m_Metadata:
@@ -135,7 +135,7 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 5882640494592
     m_Localized: "\nThe hair dryer was left on, causing a fire. Turning on the hair
-      dryer for a long time may cause a fire due to heat.\r\n\n\n It is recommended
+      dryer for a long time may cause a fire due to heat.\r\n\n It is recommended
       to turn off the hair dryer after use and to pull out the cord line. In addition,
       care must be taken for foreign substances or dust in the inlet and do not store
       it in a damp place.\r"
@@ -147,10 +147,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 6101356670976
     m_Localized: "\nThe fire was caused by bread crumbs, dust, etc. inside the toaster.
-      You need to be careful as it is a device that uses heat.\r\n\n\n   Periodic
-      cleaning of dust and breadcrumbs is required, and unplugging is recommended
-      after use. Additionally, metal substances should not be inserted after use
-      of the toaster, and the toaster should not be applied with butter.\r"
+      You need to be careful as it is a device that uses heat.\r\n\n   Periodic cleaning
+      of dust and breadcrumbs is required, and unplugging is recommended after use.
+      Additionally, metal substances should not be inserted after use of the toaster,
+      and the toaster should not be applied with butter.\r"
     m_Metadata:
       m_Items: []
   - m_Id: 191061132734464
