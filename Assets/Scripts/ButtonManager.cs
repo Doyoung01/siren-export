@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class ButtonManager : MonoBehaviour
 {
     public GameObject[] infoObjects; // Info 오브젝트 배열
-    public Button[] buttons; // 1, 2, 3, 4, 5, 6 버튼 배열
+    public Button[] buttons; // 1, 2, 3, 4, 5, 6, 7 버튼 배열
 
     private void Start()
     {
@@ -21,6 +21,7 @@ public class ButtonManager : MonoBehaviour
         buttons[3].onClick.AddListener(() => ShowInfo(3)); // 버튼 4
         buttons[4].onClick.AddListener(() => ShowInfo(4)); // 버튼 5
         buttons[5].onClick.AddListener(() => ShowInfo(5)); // 버튼 6
+        buttons[6].onClick.AddListener(() => ShowInfo(6)); // 버튼 7
     }
 
     private void ShowInfo(int index)

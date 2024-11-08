@@ -38,6 +38,82 @@ MonoBehaviour:
       to keep a fire extinguisher or fire extinguisher right next to you."
     m_Metadata:
       m_Items: []
+  - m_Id: 1099899004416000
+    m_Localized: " \n Yesterday's welding fire was alive.\n\n\n It is necessary to
+      check the site again after work and before leaving work. It's also a good idea
+      to keep a fire extinguisher or fire extinguisher right next to you."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1102758592802816
+    m_Localized: Smoking
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1102817090760704
+    m_Localized: "\n A lit cigarette was touched on a coat, which is a combustible
+      material.\n\n Only Smoke in smoking areas, and make sure that the embers are
+      completely extinguished before throwing it away. Also, use a hard, deep, non-burnt
+      porcelain or glass ashtray not a paper cup. Pouring water into the ashtray
+      is also a way to prevent cigarette embers from splashing out."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1103286169137152
+    m_Localized: Where to store combustible materials in a fire-use area
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1103778244882432
+    m_Localized: "\n A welding spark came into contact with unprotected combustible
+      material and ignited.\n\n Remove anything that could catch fire from the surrounding
+      area far away, at least 11m, or protect it with fire covers, metal shields
+      or fire protection materials(heat-resistant protective materials)."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1105497540423680
+    m_Localized: Overheating of the machine
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1105879272419328
+    m_Localized: "\n The machine has been running for a long time, causing the motor
+      and engine to become too hot.\r\n\n Check and maintain the machine regularly.
+      Also, if the space where the machine is located is hot, install cooling fans
+      or consider proper ventilation. In addition, it is recommended to establish
+      relevant work procedures to ensure thorough management."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1106174069075968
+    m_Localized: Machine collision
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1106526554189824
+    m_Localized: "\n A worker operated the machines incorrectly and they collided
+      with each other.\r\n\n Be sure to understand and use the machine operation
+      method correctly. It is recommended to manipulate the machine so that it does
+      not move excessively, thinking about the extent to which it operates."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1106810244329472
+    m_Localized: Spark fire caused by dust
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1107340152696832
+    m_Localized: "\n A welding spark met with dust in the air and exploded.\n\n\n 
+      To prevent such dust explosion accidents, it is necessary to prevent the accumulation
+      of dust with a vacuum cleaner, dust collector, etc. and remove elements that
+      can be ignition sources."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1107699814264832
+    m_Localized: Obstacles around the extinguisher
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1108044544110592
+    m_Localized: "\n There were too many boxes around the fire extinguisher to put
+      out the embers quickly.\n\n If the fire extinguisher is surrounded by a lot
+      of luggage, it may not be used properly when needed. Fire extinguishers should
+      be placed in a visible location that does not cause inconvenience to people's
+      passage, and it is recommended to avoid direct sunlight in places with high
+      temperatures or humidity."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
