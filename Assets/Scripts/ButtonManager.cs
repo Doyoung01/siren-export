@@ -4,32 +4,31 @@ using UnityEngine.UI;
 public class ButtonManager : MonoBehaviour
 {
     public GameObject[] infoObjects; // Info 오브젝트 배열
-    public Button[] buttons; // 1, 2, 3, 4, 5, 6, 7 버튼 배열
+    public Button[] buttons; // 버튼 배열
 
     private void Start()
     {
-        // 처음 시작할 때 info1만 활성화하고 나머지는 비활성화
+        // 먼저 infoObjects 배열에서 첫 번째 요소만 활성화하고 나머지는 비활성화
         for (int i = 0; i < infoObjects.Length; i++)
         {
             infoObjects[i].SetActive(i == 0); // 첫 번째 Info만 활성화
         }
 
-        // 각 버튼에 클릭 이벤트를 할당합니다.
-        buttons[0].onClick.AddListener(() => ShowInfo(0)); // 버튼 1
-        buttons[1].onClick.AddListener(() => ShowInfo(1)); // 버튼 2
-        buttons[2].onClick.AddListener(() => ShowInfo(2)); // 버튼 3
-        buttons[3].onClick.AddListener(() => ShowInfo(3)); // 버튼 4
-        buttons[4].onClick.AddListener(() => ShowInfo(4)); // 버튼 5
-        buttons[5].onClick.AddListener(() => ShowInfo(5)); // 버튼 6
-        buttons[6].onClick.AddListener(() => ShowInfo(6)); // 버튼 7
+        // buttons 배열과 infoObjects 배열의 최소 길이까지만 이벤트 할당
+        int maxLength = Mathf.Min(buttons.Length, infoObjects.Length); // 두 배열의 최소 길이 사용
+        for (int i = 0; i < maxLength; i++)
+        {
+            int index = i; // 변수로 인덱스 고정
+            buttons[i].onClick.AddListener(() => ShowInfo(index));
+        }
     }
 
     private void ShowInfo(int index)
     {
-        // 모든 Info 오브젝트를 비활성화
-        for (int i = 0; i < infoObjects.Length; i++)
+        // 모든 Info 오브젝트 비활성화
+        foreach (var info in infoObjects)
         {
-            infoObjects[i].SetActive(false);
+            info.SetActive(false);
         }
 
         // 선택한 Info 오브젝트만 활성화

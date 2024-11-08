@@ -5,7 +5,7 @@ using UnityEngine;
 public class FireEXParticle : MonoBehaviour
 {
     public ParticleSystem fire; // 불 파티클 시스템
-    public ParticleSystem[] smokeParticles = new ParticleSystem[6]; // 최대 6개의 연기 파티클 시스템 배열
+    public ParticleSystem[] smokeParticles = new ParticleSystem[14]; // 최대 15개의 연기 파티클 시스템 배열
 
     private int collisionCounter = 0; // 충돌 횟수 기록
 
