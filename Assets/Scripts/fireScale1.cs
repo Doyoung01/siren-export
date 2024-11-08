@@ -23,6 +23,7 @@ public class fireScale1 : MonoBehaviour
 
     private ParticleSystem.EmissionModule emissionModule;
     private ParticleSystem.MainModule mainModule;
+    private Collider fireCollider; // 불 파티클 오브젝트의 콜라이더
 
     private void Start()
     {
@@ -34,6 +35,7 @@ public class fireScale1 : MonoBehaviour
 
         emissionModule = firePS.emission;
         mainModule = firePS.main;
+        fireCollider = GetComponent<Collider>(); // 현재 오브젝트의 Collider를 가져옴
 
         startIntensity = emissionModule.rateOverTime.constant;
         Debug.Log("초기 강도: " + startIntensity);
@@ -59,7 +61,11 @@ public class fireScale1 : MonoBehaviour
             {
                 isExtinguished = true;
                 firePS.Stop(); // 불을 완전히 끔
-                Debug.Log("불이 완전히 꺼졌습니다.");
+                if (fireCollider != null) 
+                {
+                    fireCollider.enabled = false; // 불 파티클 오브젝트의 콜라이더 비활성화
+                }
+                Debug.Log("불이 완전히 꺼졌습니다. 콜라이더가 비활성화되었습니다.");
             }
         }
 
