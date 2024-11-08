@@ -4218,7 +4218,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -6.047, y: -6.205}
+  m_AnchoredPosition: {x: -6.047, y: -4.629}
   m_SizeDelta: {x: 989, y: 399}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &96315713
@@ -15668,7 +15668,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &399717306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19879,7 +19879,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 176.996, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 12.367, y: -6.362}
+  m_AnchoredPosition: {x: 12.367, y: -4.689}
   m_SizeDelta: {x: 989, y: 399}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &491557457
@@ -21036,7 +21036,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &514896055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24141,7 +24141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &587401650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25224,7 +25224,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &598863993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26147,10 +26147,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1773969901}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 519.5, y: 0}
-  m_SizeDelta: {x: 839, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &630907300
 PrefabInstance:
@@ -61646,7 +61646,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 91.71, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 11.93, y: -6.103}
+  m_AnchoredPosition: {x: 11.93, y: -4.805}
   m_SizeDelta: {x: 989, y: 399}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1420040929
@@ -73668,7 +73668,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -28}
-  m_SizeDelta: {x: 0, y: 10}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1723652750
 MonoBehaviour:
@@ -75688,7 +75688,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -0.345, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -3.423, y: -6.134}
+  m_AnchoredPosition: {x: -3.423, y: -4.958}
   m_SizeDelta: {x: 989, y: 399}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1766437107
@@ -76075,10 +76075,10 @@ RectTransform:
   - {fileID: 630891818}
   m_Father: {fileID: 1723652749}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 494.5, y: -5}
-  m_SizeDelta: {x: 989, y: 10}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 989, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1773969902
 MonoBehaviour:
@@ -79369,7 +79369,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -57.428, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1.566, y: -6.244}
+  m_AnchoredPosition: {x: 1.566, y: -4.942}
   m_SizeDelta: {x: 989, y: 437}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1846110622
@@ -80149,7 +80149,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 89.55, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 11.918, y: -6.095}
+  m_AnchoredPosition: {x: 11.918, y: -4.802}
   m_SizeDelta: {x: 989, y: 399}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1857522756
@@ -94606,7 +94606,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!33 &5456454085823252991
 MeshFilter:
   m_ObjectHideFlags: 0
