@@ -14,11 +14,10 @@ public class fireScale1 : MonoBehaviour
     private float startIntensity = 0f;
     public float GetCurrentIntensity() => currentIntensity;
 
-
     [SerializeField] private ParticleSystem firePS;
 
     private float spreadSpeed = 0.001f; // 불 번지는 속도
-    private float extinguishSpeed = 0.1f; // 충돌 시 불 강도 감소 속도
+    private float extinguishSpeed = 0.1f; // 소화 속도
     private bool isExtinguishing = false; // 소화 중인지 여부
     private bool isExtinguished = false; // 소화 완료 여부
 
@@ -51,6 +50,18 @@ public class fireScale1 : MonoBehaviour
         {
             SpreadFire();
         }
+        else // 소화 중이라면 currentIntensity를 감소시킴
+        {
+            currentIntensity -= extinguishSpeed * Time.deltaTime;
+            currentIntensity = Mathf.Max(currentIntensity, 0f); // 최소 0으로 유지
+
+            if (currentIntensity <= 0) // 강도가 0이면 소화 완료로 설정
+            {
+                isExtinguished = true;
+                firePS.Stop(); // 불을 완전히 끔
+                Debug.Log("불이 완전히 꺼졌습니다.");
+            }
+        }
 
         ChangeIntensity();
         IncreaseParticleSize();
@@ -59,14 +70,6 @@ public class fireScale1 : MonoBehaviour
     private void ChangeIntensity()
     {
         emissionModule.rateOverTime = new ParticleSystem.MinMaxCurve(currentIntensity * startIntensity);
-
-        if (currentIntensity <= 0 && !isExtinguished)
-        {
-            currentIntensity = 0;
-            isExtinguished = true; // 소화 완료 상태로 설정
-            firePS.Stop(); // 강도가 0일 때 불을 완전히 끄기
-            Debug.Log("불이 완전히 꺼졌습니다.");
-        }
     }
 
     // 불이 점점 번지는 효과를 주기 위한 메서드
@@ -92,7 +95,7 @@ public class fireScale1 : MonoBehaviour
         }
     }
 
-    // 소화기 파티클과의 충돌 시 강도 감소
+    // 소화기 파티클과의 충돌 시 소화 중 상태로 설정
     private void OnParticleCollision(GameObject other)
     {
         if (isExtinguished) return; // 소화 완료된 경우 충돌 무시
@@ -101,8 +104,6 @@ public class fireScale1 : MonoBehaviour
         {
             Debug.Log("소화기 파티클과 충돌하여 불 강도 감소 중");
             isExtinguishing = true; // 소화 중 상태로 전환
-            currentIntensity -= extinguishSpeed * Time.deltaTime;
-            currentIntensity = Mathf.Max(currentIntensity, 0f); // 최소 0으로 유지
         }
     }
 
@@ -111,7 +112,7 @@ public class fireScale1 : MonoBehaviour
         if (collision.gameObject == extinguisherParticle.gameObject)
         {
             Debug.Log("소화기 파티클과의 충돌이 끝났습니다.");
-            isExtinguishing = false;
+            // isExtinguishing을 여기서 끄지 않음 - 소화 중 상태 유지
         }
     }
 }

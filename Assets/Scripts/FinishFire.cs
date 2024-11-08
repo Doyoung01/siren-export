@@ -4,25 +4,29 @@ using UnityEngine;
 
 public class FinishFire : MonoBehaviour
 {
-    public GameObject finishFireEx; // FinishFireEx 오브젝트
-    public List<fireScale1> fireParticles; // 모든 불 파티클들을 할당할 리스트
+    public GameObject fireFinishEx; // FireFinishEx 오브젝트
+    public List<fireScale1> fireParticles; // 모든 불 파티클들의 리스트
+
+    private bool isFireFinishExActivated = false; // FireFinishEx가 활성화되었는지 확인하는 플래그
 
     private void Start()
     {
-        if (finishFireEx == null)
+        if (fireFinishEx == null)
         {
-            Debug.LogError("FinishFireEx 오브젝트가 할당되지 않았습니다.");
+            Debug.LogError("FireFinishEx 오브젝트가 할당되지 않았습니다.");
             return;
         }
 
-        finishFireEx.SetActive(false); // 시작 시 FinishFireEx 오브젝트 비활성화
+        fireFinishEx.SetActive(false); // 시작 시 FireFinishEx 오브젝트 비활성화
     }
 
     private void Update()
     {
-        if (AreAllFiresExtinguished())
+        // FireFinishEx가 활성화되지 않았고 모든 불 파티클이 소화된 경우
+        if (!isFireFinishExActivated && AreAllFiresExtinguished())
         {
-            finishFireEx.SetActive(true); // 모든 불이 꺼지면 FinishFireEx 활성화
+            fireFinishEx.SetActive(true); // 모든 불이 꺼지면 FireFinishEx 활성화
+            isFireFinishExActivated = true; // 플래그를 true로 설정하여 다시 활성화되지 않도록 함
             Debug.Log("모든 불이 진압되었습니다!");
         }
     }
@@ -32,9 +36,9 @@ public class FinishFire : MonoBehaviour
     {
         foreach (var fireParticle in fireParticles)
         {
-            if (fireParticle.GetCurrentIntensity() > 0) // GetCurrentIntensity() 메서드를 통해 접근
+            if (fireParticle.GetCurrentIntensity() > 0) // 각 파티클의 강도가 0인지 확인
             {
-                return false;
+                return false; // 어떤 불이라도 강도가 남아있으면 false 반환
             }
         }
         return true;
