@@ -51,4 +51,14 @@ public class SceneTransitionManager : MonoBehaviour
 
         operation.allowSceneActivation = true;
     }
+
+    private void InitializeScene()
+    {
+        // 현재 씬 인덱스 가져오기
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        // 현재 씬 재로드
+        SceneManager.LoadScene(currentSceneIndex);
+    }
+
 }
